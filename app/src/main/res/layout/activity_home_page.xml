@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Home_PageActivity"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <!--    Text: Mindful Meadow-->
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mindful Meadow"
+        android:textColor="#4CAF50"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        />
+
+    <!--    Text: Greeting-->
+    <TextView
+        android:id="@+id/tv_greeting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome, Steven!"
+        android:textColor="#2196F3"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <!--        Image: Meadow Image-->
+        <ImageView
+            android:id="@+id/imgv_meadow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/meadow" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            >
+
+            <!--            Text: Your Meadow is flourishing!-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Your Meadow is flourishing!"
+                android:textSize="20sp"
+                />
+
+            <!--            Botton: What is this?-->
+            <Button
+                android:id="@+id/btn_meadow_meaning"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="What is this?"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <!--    Text: How are you today?-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How are you today?"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        />
+
+    <!--    Button: Start a log-->
+    <Button
+        android:id="@+id/btn_start_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start a Log"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        />
+
+    <!--    Text: Every emotion...-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Every emotion is a step towards greater self-awareness and growth."
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        />
+
+</LinearLayout>

@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         tab4 = findViewById(R.id.rb_ai)
 
         mViews = mutableListOf(
-            LayoutInflater.from(this).inflate(R.layout.home_page, null),
+            LayoutInflater.from(this).inflate(R.layout.activity_home_page, null),
             LayoutInflater.from(this).inflate(R.layout.log_history, null),
             LayoutInflater.from(this).inflate(R.layout.log_graph, null),
             LayoutInflater.from(this).inflate(R.layout.ai_analysis, null)

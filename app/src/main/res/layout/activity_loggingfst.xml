@@ -1,21 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
     tools:context=".Logging_fstActivity">
 
+    <!--    The back button-->
+    <ImageView
+        android:id="@+id/iv_back_to_home"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:src="@drawable/baseline_arrow_back_24" />
+
+<!--    Text: What are you feeling?-->
     <TextView
+        android:id="@+id/tv_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logging"
-        android:textSize="25sp"
+        android:layout_below="@+id/iv_back_to_home"
         android:gravity="center"
-        />
+        android:text="What are you feeling?"
+        android:textSize="30sp" />
 
-  </LinearLayout>
+<!--    Image: joy and genius-->
+    <LinearLayout
+        android:id="@+id/emoji_set_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/tv_1"
+        android:layout_marginTop="40dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_joy"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:src="@drawable/joy"/>
+
+        <ImageView
+            android:id="@+id/iv_genius"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:src="@drawable/genius"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emoji_text_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/emoji_set_1"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Joy"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Genius"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <!--    Image: disgust and anger-->
+    <LinearLayout
+        android:id="@+id/emoji_set_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/emoji_text_1"
+        android:layout_marginTop="60dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_disgust"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:src="@drawable/disgust"/>
+
+        <ImageView
+            android:id="@+id/iv_anger"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:src="@drawable/anger"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emoji_text_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/emoji_set_2"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Disgust"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Anger"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <!--    Image: fear and sad-->
+    <LinearLayout
+        android:id="@+id/emoji_set_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/emoji_text_2"
+        android:layout_marginTop="60dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_fear"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:src="@drawable/fear"/>
+
+        <ImageView
+            android:id="@+id/iv_sad"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="100dp"
+            android:src="@drawable/sad"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/emoji_text_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/emoji_set_3"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Fear"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sad"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

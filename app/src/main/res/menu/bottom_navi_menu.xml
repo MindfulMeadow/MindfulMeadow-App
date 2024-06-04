@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+        android:icon="@drawable/baseline_grass_24_black"
+        android:id="@+id/home"/>
+    <item android:title="History"
+        android:icon="@drawable/baseline_history_24_black"
+        android:id="@+id/log_history"/>
+    <item android:title="Graph"
+        android:icon="@drawable/baseline_calendar_month_24_black"
+        android:id="@+id/log_graph"/>
+    <item android:title="AI Analysis"
+        android:icon="@drawable/baseline_analytics_24_black"
+        android:id="@+id/ai_analysis"/>
+
+</menu>

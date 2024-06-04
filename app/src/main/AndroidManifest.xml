@@ -13,13 +13,19 @@
         android:theme="@style/Theme.MindfulMeadowApp"
         tools:targetApi="31">
         <activity
-            android:name=".Home_PageActivity"
+            android:name=".AnalysisActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_1Activity"
+            android:name=".GraphActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Logging_fstActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.MindfulMeadowApp">
             <intent-filter>

@@ -33,11 +33,11 @@ class GraphActivity : AppCompatActivity() {
             }
         }
 
-        // Set default selection to Week
-        // updateSelectedTimeSpan(tvWeek)
-
         // Initialize ImageView for the graph
         imageViewGraph = findViewById(R.id.imageView_graph)
+
+        // Set default selection to Week
+        updateSelectedTimeSpan(tvWeek)
 
         // Bottom Navigation View setup
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)

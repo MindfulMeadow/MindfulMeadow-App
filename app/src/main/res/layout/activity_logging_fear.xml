@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Logging_Snd_Step_Activities.Logging_FearActivity">
+
+    <!--    The back button-->
+    <ImageView
+        android:id="@+id/iv_back_to_fst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:src="@drawable/baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/tv_further_identify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You would further identify it as..."
+        android:layout_below="@id/iv_back_to_fst"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"/>
+
+
+    <RadioGroup
+        android:id="@+id/rg_fear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tv_further_identify"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_fear_worried"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Worried"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_fear_insecure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insecure"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_fear_anxious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Anxious"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_fear_vulnerable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vulnerable"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_fear_threatened"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Threatened"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_fear_overwhelmed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overwhelmed"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_fear_insignificant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insignificant"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_fear_terrified"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terrified"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_fear_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="20sp"
+        android:layout_below="@id/rg_fear"
+        android:layout_marginTop="20dp"/>
+
+
+</RelativeLayout>

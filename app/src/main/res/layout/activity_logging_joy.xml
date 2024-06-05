@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Logging_Snd_Step_Activities.Logging_JoyActivity">
+
+    <!--    The back button-->
+    <ImageView
+        android:id="@+id/iv_back_to_fst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:src="@drawable/baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/tv_further_identify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You would further identify it as..."
+        android:layout_below="@id/iv_back_to_fst"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"/>
+
+
+    <RadioGroup
+        android:id="@+id/rg_joy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tv_further_identify"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_joy_calm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calm"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_joy_kind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kind"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_joy_curios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Curios"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_joy_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Free"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_joy_confident"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confident"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_joy_moved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moved"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_joy_brave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brave"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_joy_proud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proud"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_joy_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="20sp"
+        android:layout_below="@id/rg_joy"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

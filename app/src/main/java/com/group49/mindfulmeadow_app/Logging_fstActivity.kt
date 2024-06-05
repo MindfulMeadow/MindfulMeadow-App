@@ -4,6 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_AngerActivity
+import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_DisgustActivity
+import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_FearActivity
+import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_GeniusActivity
+import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_JoyActivity
+import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_SadActivity
 
 class Logging_fstActivity : AppCompatActivity() {
 
@@ -35,37 +41,38 @@ class Logging_fstActivity : AppCompatActivity() {
 
         mBtnJoy.setOnClickListener {
             //TODO: 记录emotion joy
-            jumpToLoggingSndPage()
+            val intent = Intent(this@Logging_fstActivity, Logging_JoyActivity::class.java)
+            startActivity(intent)
         }
 
         mBtnGenius.setOnClickListener {
             //TODO: 记录emotion genius
-            jumpToLoggingSndPage()
+            val intent = Intent(this@Logging_fstActivity, Logging_GeniusActivity::class.java)
+            startActivity(intent)
         }
 
         mBtnDisgust.setOnClickListener {
             //TODO: 记录emotion disgust
-            jumpToLoggingSndPage()
+            val intent = Intent(this@Logging_fstActivity, Logging_DisgustActivity::class.java)
+            startActivity(intent)
         }
 
         mBtnAnger.setOnClickListener {
             //TODO: 记录emotion anger
-            jumpToLoggingSndPage()
+            val intent = Intent(this@Logging_fstActivity, Logging_AngerActivity::class.java)
+            startActivity(intent)
         }
 
         mBtnFear.setOnClickListener {
             //TODO: 记录emotion fear
-            jumpToLoggingSndPage()
+            val intent = Intent(this@Logging_fstActivity, Logging_FearActivity::class.java)
+            startActivity(intent)
         }
 
         mBtnSad.setOnClickListener {
             //TODO: 记录emotion sad
-            jumpToLoggingSndPage()
+            val intent = Intent(this@Logging_fstActivity, Logging_SadActivity::class.java)
+            startActivity(intent)
         }
-    }
-
-    private fun jumpToLoggingSndPage() {
-        val intent = Intent(this@Logging_fstActivity, Logging_sndActivity::class.java)
-        startActivity(intent)
     }
 }

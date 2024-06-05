@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Logging_Snd_Step_Activities.Logging_GeniusActivity">
+
+    <!--    The back button-->
+    <ImageView
+        android:id="@+id/iv_back_to_fst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:src="@drawable/baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/tv_further_identify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You would further identify it as..."
+        android:layout_below="@id/iv_back_to_fst"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"/>
+
+
+    <RadioGroup
+        android:id="@+id/rg_genius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tv_further_identify"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_genius_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="a"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_genius_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_genius_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="c"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_genius_d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="d"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_genius_e"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="e"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_genius_f"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="f"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_genius_g"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="g"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_genius_h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="h"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_genius_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="20sp"
+        android:layout_below="@id/rg_genius"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

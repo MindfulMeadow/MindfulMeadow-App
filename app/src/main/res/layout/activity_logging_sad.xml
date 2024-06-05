@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Logging_Snd_Step_Activities.Logging_SadActivity">
+
+    <!--    The back button-->
+    <ImageView
+        android:id="@+id/iv_back_to_fst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:src="@drawable/baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/tv_further_identify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You would further identify it as..."
+        android:layout_below="@id/iv_back_to_fst"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"/>
+
+
+    <RadioGroup
+        android:id="@+id/rg_sad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tv_further_identify"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_sad_bored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bored"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_sad_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empty"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_sad_tired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tired"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_sad_lonely"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lonely"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_sad_isolated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Isolated"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_sad_frustrated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frustrated"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_sad_heartbroken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Heartbroken"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_sad_depressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Depressed"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_sad_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="20sp"
+        android:layout_below="@id/rg_sad"
+        android:layout_marginTop="20dp"/>
+
+
+</RelativeLayout>

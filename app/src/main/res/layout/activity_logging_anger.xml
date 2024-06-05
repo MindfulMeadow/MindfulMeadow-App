@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Logging_Snd_Step_Activities.Logging_AngerActivity">
+
+    <!--    The back button-->
+    <ImageView
+        android:id="@+id/iv_back_to_fst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:src="@drawable/baseline_arrow_back_24" />
+
+    <TextView
+        android:id="@+id/tv_further_identify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You would further identify it as..."
+        android:layout_below="@id/iv_back_to_fst"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"/>
+
+
+    <RadioGroup
+        android:id="@+id/rg_anger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/tv_further_identify"
+        android:layout_marginTop="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_anger_skeptical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skeptical"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_anger_protective"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Protective"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_anger_defensive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Defensive"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_anger_irritated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Irritated"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_anger_resentful"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resentful"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_anger_envious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Envious"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_anger_aggressive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aggressive"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_anger_frustrated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frustrated"
+            android:textColor="@color/black"
+            android:textSize="40sp"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_anger_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textSize="20sp"
+        android:layout_below="@id/rg_anger"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

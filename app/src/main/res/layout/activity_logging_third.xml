@@ -1,17 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Logging_thirdActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="100dp"
-        android:text="1111"
-        />
+        android:padding="10dp">
 
-</RelativeLayout>
+        <!--    The back button-->
+        <ImageView
+            android:id="@+id/iv_back_to_snd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:clickable="true"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+        <TextView
+            android:id="@+id/tv_related_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is it related to?"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_below="@id/iv_back_to_snd"
+            />
+
+        <RadioGroup
+            android:id="@+id/rg_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_related_to"
+            android:background="@drawable/radio_group_background"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/rb_friend"
+                android:text="Friends"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_romantic_relationship"
+                android:text="Romantic Relationship"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_family"
+                android:text="Family"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_pets"
+                android:text="Pets"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_work"
+                android:text="Work"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_study"
+                android:text="Study"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_chores"
+                android:text="Chores"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_social_media"
+                android:text="Social Media"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_strangers"
+                android:text="Strangers"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_crime"
+                android:text="Crime"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_news"
+                android:text="News"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_politics"
+                android:text="Politics"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_health"
+                android:text="Health"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_weather"
+                android:text="Weather"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_sports"
+                android:text="Sports"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_leisure"
+                android:text="Leisure"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_celebrity"
+                android:text="Celebrity"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_finance"
+                android:text="Finance"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_accident"
+                android:text="Accident"
+                android:background="@drawable/radio_off"
+                style="@style/RadioButtonStyle"
+                />
+
+
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/btn_event_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="20sp"
+            android:layout_below="@id/rg_event"
+            android:layout_marginTop="20dp"/>
+
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -1,11 +1,15 @@
 package com.group49.mindfulmeadow_app
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.Firebase
+import com.google.firebase.firestore.firestore
 
 class HomeActivity : AppCompatActivity() {
 
@@ -57,6 +61,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showMeaningPopup() {
+
         val builder = AlertDialog.Builder(this)
         builder.setTitle("What does my meadow mean?")
         builder.setMessage("This meadow is a visual representation of your emotional state: flowers grow when your emotional state is healthy; grass wither when you need to take better care of your emotional state.") // Replace with your actual text

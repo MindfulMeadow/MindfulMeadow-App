@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".Logging_fourthActivity">
+    tools:context=".Logging_fifthActivity">
 
     <!--    The back button-->
     <ImageView
-        android:id="@+id/iv_back_to_third"
+        android:id="@+id/iv_back_to_fourth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -18,47 +18,43 @@
         android:src="@drawable/baseline_arrow_back_24" />
 
     <TextView
-        android:id="@+id/tv_elaborate"
+        android:id="@+id/tv_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Would you like to elaborate?"
-        android:textSize="30sp"
+        android:text="Your log is set to the current time by default."
+        android:layout_below="@id/iv_back_to_fourth"
+        android:textColor="@color/blue_green"
         android:gravity="center"
-        android:layout_below="@id/iv_back_to_third"
-        />
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"/>
 
     <TextView
-        android:id="@+id/tv_tips"
+        android:id="@+id/tv_here"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This will help us to provide you with more accurate analysis and suggestions."
-        android:textSize="20sp"
+        android:text="Change it here:"
+        android:layout_below="@id/tv_hint"
         android:gravity="center"
-        android:textColor="@color/blue_green"
-        android:layout_below="@id/tv_elaborate"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+
+    <DatePicker
+        android:id="@+id/dp_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_here"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_marginTop="10dp"
         />
 
-    <EditText
-        android:id="@+id/et_1"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="@drawable/et_background"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:hint="Type here"
-        android:gravity="top"
-        android:padding="5dp"
-        android:layout_below="@id/tv_tips"
-        android:layout_marginTop="30dp"/>
-
     <Button
-        android:id="@+id/btn_event_next"
+        android:id="@+id/btn_date_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="Save this log"
         android:textSize="20sp"
-        android:layout_below="@id/et_1"
+        android:layout_below="@id/dp_1"
         android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

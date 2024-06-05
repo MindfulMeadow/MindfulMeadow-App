@@ -42,6 +42,9 @@ class Logging_thirdActivity : AppCompatActivity() {
 
         initialWidgets()
 
+        mBtnBackToSnd = findViewById(R.id.iv_back_to_snd)
+        mBtnNext = findViewById(R.id.btn_event_next)
+
         mBtnBackToSnd.setOnClickListener {
             val intent = Intent(this@Logging_thirdActivity, Logging_fstActivity::class.java)
             startActivity(intent)
@@ -56,8 +59,6 @@ class Logging_thirdActivity : AppCompatActivity() {
         }
 
     private fun initialWidgets() {
-        mBtnBackToSnd = findViewById(R.id.iv_back_to_snd)
-        mBtnNext = findViewById(R.id.btn_event_next)
 
         friend = findViewById(R.id.rb_friend)
         romantic_relationship = findViewById(R.id.rb_romantic_relationship)

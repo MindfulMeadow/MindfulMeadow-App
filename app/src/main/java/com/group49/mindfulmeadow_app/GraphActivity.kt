@@ -34,7 +34,7 @@ class GraphActivity : AppCompatActivity() {
         }
 
         // Set default selection to Week
-        updateSelectedTimeSpan(tvWeek)
+        // updateSelectedTimeSpan(tvWeek)
 
         // Initialize ImageView for the graph
         imageViewGraph = findViewById(R.id.imageView_graph)

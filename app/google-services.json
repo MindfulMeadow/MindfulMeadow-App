@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "456913840735",
+    "project_id": "mindfulmeadow-be3d2",
+    "storage_bucket": "mindfulmeadow-be3d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456913840735:android:a0f9bc959f3b1857b909ea",
+        "android_client_info": {
+          "package_name": "com.group49.mindfulmeadow_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOa2_dM6sQUEpsEX2SmtIDkIifDO_2-PQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

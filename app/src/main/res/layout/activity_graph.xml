@@ -62,18 +62,31 @@
             android:background="@android:color/darker_gray" />
     </LinearLayout>
 
-    <!-- Graph Image -->
-    <ImageView
-        android:id="@+id/imageView_graph"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:src="@drawable/psudo_week_graph"
+        android:orientation="vertical"
         android:layout_below="@id/timeSpanSelector"
-        app:layout_constraintTop_toBottomOf="@id/timeSpanSelector"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_above="@id/bottomNavigationView">
+
+        <!-- Graph Image -->
+        <ImageView
+            android:id="@+id/imageView_graph"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/psudo_week_graph" />
+
+        <!-- Analysis Image -->
+        <ImageView
+            android:id="@+id/imageView_Analysis"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pseudo_week_analysis" />
+    </LinearLayout>
 
     <!-- Bottom Navigation View -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

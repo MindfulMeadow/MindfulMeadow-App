@@ -85,9 +85,9 @@ class AnalysisActivity : AppCompatActivity() {
         }
         // Change the analysis image based on the selected option
         when (selectedTextView) {
-            tvYear -> imageViewAnalysis.setImageResource(R.drawable.pseudo_analysis)
-            tvMonth -> imageViewAnalysis.setImageResource(R.drawable.pseudo_analysis)
-            tvWeek -> imageViewAnalysis.setImageResource(R.drawable.pseudo_analysis)
+            tvYear -> imageViewAnalysis.setImageResource(R.drawable.pseudo_year_analysis)
+            tvMonth -> imageViewAnalysis.setImageResource(R.drawable.pseudo_month_analysis)
+            tvWeek -> imageViewAnalysis.setImageResource(R.drawable.pseudo_week_analysis)
         }
     }
 }

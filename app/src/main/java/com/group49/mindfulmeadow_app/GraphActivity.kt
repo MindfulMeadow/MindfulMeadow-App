@@ -14,6 +14,7 @@ class GraphActivity : AppCompatActivity() {
     private lateinit var tvMonth: TextView
     private lateinit var tvWeek: TextView
     private lateinit var imageViewGraph: ImageView
+    private lateinit var imageViewAnalysis: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +34,9 @@ class GraphActivity : AppCompatActivity() {
             }
         }
 
-        // Initialize ImageView for the graph
+        // Initialize ImageViews
         imageViewGraph = findViewById(R.id.imageView_graph)
+        imageViewAnalysis = findViewById(R.id.imageView_Analysis)
 
         // Set default selection to Week
         updateSelectedTimeSpan(tvWeek)
@@ -85,9 +87,18 @@ class GraphActivity : AppCompatActivity() {
         }
         // Change the graph image based on the selected option
         when (selectedTextView) {
-            tvYear -> imageViewGraph.setImageResource(R.drawable.psudo_year_graph)
-            tvMonth -> imageViewGraph.setImageResource(R.drawable.psudo_month_graph)
-            tvWeek -> imageViewGraph.setImageResource(R.drawable.psudo_week_graph)
+            tvYear -> {
+                imageViewGraph.setImageResource(R.drawable.psudo_year_graph)
+                imageViewAnalysis.setImageResource(R.drawable.pseudo_year_analysis)
+            }
+            tvMonth -> {
+                imageViewGraph.setImageResource(R.drawable.psudo_month_graph)
+                imageViewAnalysis.setImageResource(R.drawable.pseudo_month_analysis)
+            }
+            tvWeek -> {
+                imageViewGraph.setImageResource(R.drawable.psudo_week_graph)
+                imageViewAnalysis.setImageResource(R.drawable.pseudo_week_analysis)
+            }
         }
     }
 }

@@ -193,7 +193,7 @@ class Graph_WeekActivity : AppCompatActivity() {
                 in 9..16 -> getColor(R.color.blue)
                 in 17..24 -> getColor(R.color.red)
                 in 25..32 -> getColor(R.color.green)
-                in 33..40 -> getColor(R.color.red)
+                in 33..40 -> getColor(R.color.yellow)
                 in 41..48 -> getColor(R.color.orange)
                 else -> resources.getColor(R.color.gray)
             }

@@ -59,6 +59,9 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LogAndRegisterActivity"
             android:exported="true"
             android:theme="@style/Theme.MindfulMeadowApp">
             <intent-filter>

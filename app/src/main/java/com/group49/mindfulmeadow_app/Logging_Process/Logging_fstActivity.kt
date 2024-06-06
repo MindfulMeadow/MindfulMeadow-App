@@ -32,6 +32,8 @@ class Logging_fstActivity : AppCompatActivity() {
         mBtnBackToHome.setOnClickListener {
             val intent = Intent(this@Logging_fstActivity, HomeActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
+
         }
 
         mBtnJoy = findViewById(R.id.iv_joy)
@@ -44,16 +46,22 @@ class Logging_fstActivity : AppCompatActivity() {
         mBtnJoy.setOnClickListener {
             val intent = Intent(this@Logging_fstActivity, Logging_JoyActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
+
         }
 
         mBtnGenius.setOnClickListener {
             val intent = Intent(this@Logging_fstActivity, Logging_GeniusActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
+
         }
 
         mBtnDisgust.setOnClickListener {
             val intent = Intent(this@Logging_fstActivity, Logging_DisgustActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
+
         }
 
         mBtnAnger.setOnClickListener {
@@ -65,11 +73,15 @@ class Logging_fstActivity : AppCompatActivity() {
         mBtnFear.setOnClickListener {
             val intent = Intent(this@Logging_fstActivity, Logging_FearActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
+
         }
 
         mBtnSad.setOnClickListener {
             val intent = Intent(this@Logging_fstActivity, Logging_SadActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
+
         }
     }
 }

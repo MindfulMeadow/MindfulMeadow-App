@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Logging_Process.Logging_thirdActivity">
+    tools:context=".Logging_Process.Logging_thirdActivity"
+    android:background="@drawable/green_background">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -44,133 +45,114 @@
             <CheckBox
                 android:id="@+id/cb_friend"
                 android:text="Friends"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_romantic_relationship"
                 android:text="Romantic Relationship"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_family"
                 android:text="Family"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_pets"
                 android:text="Pets"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_work"
                 android:text="Work"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_study"
                 android:text="Study"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_chores"
                 android:text="Chores"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_social_media"
                 android:text="Social Media"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_strangers"
                 android:text="Strangers"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_crime"
                 android:text="Crime"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_news"
                 android:text="News"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_politics"
                 android:text="Politics"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_health"
                 android:text="Health"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_weather"
                 android:text="Weather"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_sports"
                 android:text="Sports"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_leisure"
                 android:text="Leisure"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_celebrity"
                 android:text="Celebrity"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_finance"
                 android:text="Finance"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
             <CheckBox
                 android:id="@+id/cb_accident"
                 android:text="Accident"
-                android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 

@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".Logging_Process.Logging_fourthActivity">
+    tools:context=".Logging_Process.Logging_fourthActivity"
+    android:background="@drawable/green_background">
 
     <!--    The back button-->
     <ImageView
@@ -46,7 +47,7 @@
         android:background="@drawable/et_background"
         android:textSize="20sp"
         android:textColor="@color/black"
-        android:hint="Type here"
+        android:hint="Type here(Optional)..."
         android:gravity="top"
         android:padding="5dp"
         android:layout_below="@id/tv_tips"

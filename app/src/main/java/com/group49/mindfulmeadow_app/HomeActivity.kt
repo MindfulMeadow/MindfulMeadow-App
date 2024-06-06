@@ -22,6 +22,8 @@ class HomeActivity : AppCompatActivity() {
         mBtnStartLog.setOnClickListener {
             val intent = Intent(this@HomeActivity, Logging_fstActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
+
         }
 
         mBtnMeaning.setOnClickListener {

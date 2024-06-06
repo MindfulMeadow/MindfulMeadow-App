@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".Logging_Process.Logging_Snd_Step_Activities.Logging_JoyActivity">
+    tools:context=".Logging_Process.Logging_Snd_Step_Activities.Logging_JoyActivity"
+    android:background="@drawable/background_joy">
 
     <!--    The back button-->
     <ImageView

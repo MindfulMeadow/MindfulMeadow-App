@@ -28,6 +28,7 @@ class Logging_fourthActivity : AppCompatActivity() {
         mBtnBackToThird.setOnClickListener {
             val intent = Intent(this@Logging_fourthActivity, Logging_thirdActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
         }
 
         mBtnNext.setOnClickListener {
@@ -38,6 +39,7 @@ class Logging_fourthActivity : AppCompatActivity() {
                 putStringArrayListExtra("selectedItems", selectedItems)
             }
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
         }
 
     }

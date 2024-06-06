@@ -44,6 +44,7 @@ class Logging_thirdActivity : AppCompatActivity() {
         mBtnBackToSnd.setOnClickListener {
             val intent = Intent(this@Logging_thirdActivity, Logging_fstActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
         }
 
         val selectedMood = intent.getStringExtra("selectedMood")
@@ -57,6 +58,7 @@ class Logging_thirdActivity : AppCompatActivity() {
                 putStringArrayListExtra("selectedItems", ArrayList(selectedItems))
             }
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
         }
 
         }

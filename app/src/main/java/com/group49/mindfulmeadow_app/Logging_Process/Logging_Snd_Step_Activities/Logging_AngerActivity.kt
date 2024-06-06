@@ -29,6 +29,7 @@ class Logging_AngerActivity : AppCompatActivity() {
         mBtnBackToFst.setOnClickListener {
             val intent = Intent(this@Logging_AngerActivity, Logging_fstActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
         }
 
         mBtnNext.setOnClickListener {
@@ -40,6 +41,7 @@ class Logging_AngerActivity : AppCompatActivity() {
                     putExtra("selectedMood", "Anger: " + selectedText)
                 }
                 startActivity(intent)
+                overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
             } else {
                 Toast.makeText(this, "Please select a mood.", Toast.LENGTH_SHORT).show()
             }

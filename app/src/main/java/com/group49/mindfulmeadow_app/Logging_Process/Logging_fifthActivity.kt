@@ -34,9 +34,10 @@ class Logging_fifthActivity : AppCompatActivity() {
         mBtnSave = findViewById(R.id.btn_date_save)
         mBtnBackToFourth = findViewById(R.id.iv_back_to_fourth)
 
-        mBtnSave.setOnClickListener {
+        mBtnBackToFourth.setOnClickListener {
             val intent = Intent(this@Logging_fifthActivity, Logging_fourthActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
         }
 
         mBtnSave.setOnClickListener {
@@ -59,6 +60,7 @@ class Logging_fifthActivity : AppCompatActivity() {
                     builder.setPositiveButton("OK") { _, _ ->
                         val intent = Intent(this@Logging_fifthActivity, HomeActivity::class.java)
                         startActivity(intent)
+                        overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
                     }
                     builder.show()
                 } else {
@@ -74,7 +76,7 @@ class Logging_fifthActivity : AppCompatActivity() {
             Toast.makeText(
                 applicationContext,
                 "#" + datePi.year + "-" + datePi.month + "-" + datePi.dayOfMonth + "/",
-                Toast.LENGTH_LONG).show()
+                Toast.LENGTH_LONG)
         }
     }
 

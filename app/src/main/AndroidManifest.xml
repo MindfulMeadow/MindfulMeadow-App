@@ -41,10 +41,10 @@
             android:exported="false" />
         <activity
             android:name=".AnalysisActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".GraphActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".HistoryActivity"
             android:exported="false" />

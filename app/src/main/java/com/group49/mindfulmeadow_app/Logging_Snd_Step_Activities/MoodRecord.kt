@@ -5,5 +5,6 @@ data class MoodRecord(
     val logId:String,
     val feeling:String,
     val description:List<String>,
-    val log:String
+    val log:String,
+    val date:String
 )

@@ -37,8 +37,17 @@ class Logging_JoyActivity : AppCompatActivity() {
         }
 
         mBtnNext.setOnClickListener {
-            val intent = Intent(this@Logging_JoyActivity, Logging_thirdActivity::class.java)
-            startActivity(intent)
+            val selectedRadioButtonId = mRG1.checkedRadioButtonId
+            if (selectedRadioButtonId != -1) {
+                val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId)
+                val selectedText = selectedRadioButton.text.toString()
+                val intent = Intent(this@Logging_JoyActivity, Logging_thirdActivity::class.java).apply {
+                    putExtra("selectedMood", "Joy: " + selectedText)
+                }
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Please select a mood.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         mRG1.setOnCheckedChangeListener { group, checkedId ->

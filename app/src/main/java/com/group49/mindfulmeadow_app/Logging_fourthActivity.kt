@@ -8,6 +8,7 @@ import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,6 +24,9 @@ class Logging_fourthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logging_fourth)
 
+        val selectedMood = intent.getStringExtra("selectedMood")
+        val selectedItems = intent.getStringArrayListExtra("selectedItems")
+
         mBtnNext = findViewById(R.id.btn_event_next)
         mBtnBackToThird = findViewById(R.id.iv_back_to_third)
         editText = findViewById(R.id.et_1)
@@ -33,7 +37,12 @@ class Logging_fourthActivity : AppCompatActivity() {
         }
 
         mBtnNext.setOnClickListener {
-            val intent = Intent(this@Logging_fourthActivity, Logging_fifthActivity::class.java)
+            val elaborationText = editText.text.toString()
+            val intent = Intent(this@Logging_fourthActivity, Logging_fifthActivity::class.java).apply {
+                putExtra("elaborationText", elaborationText)
+                putExtra("selectedMood", selectedMood)
+                putStringArrayListExtra("selectedItems", selectedItems)
+            }
             startActivity(intent)
         }
 

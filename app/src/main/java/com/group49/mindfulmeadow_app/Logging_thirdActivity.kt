@@ -4,8 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -17,25 +19,25 @@ class Logging_thirdActivity : AppCompatActivity() {
     private lateinit var mBtnBackToSnd: ImageView
     private lateinit var mBtnNext: Button
 
-    private lateinit var friend: RadioButton
-    private lateinit var romantic_relationship: RadioButton
-    private lateinit var family: RadioButton
-    private lateinit var pets: RadioButton
-    private lateinit var work: RadioButton
-    private lateinit var study: RadioButton
-    private lateinit var chores: RadioButton
-    private lateinit var social_media: RadioButton
-    private lateinit var strangers: RadioButton
-    private lateinit var crime: RadioButton
-    private lateinit var news: RadioButton
-    private lateinit var politics: RadioButton
-    private lateinit var health: RadioButton
-    private lateinit var weather: RadioButton
-    private lateinit var sports: RadioButton
-    private lateinit var leisure: RadioButton
-    private lateinit var celebrity: RadioButton
-    private lateinit var finance: RadioButton
-    private lateinit var accident: RadioButton
+    private lateinit var friend: CheckBox
+    private lateinit var romantic_relationship: CheckBox
+    private lateinit var family: CheckBox
+    private lateinit var pets: CheckBox
+    private lateinit var work: CheckBox
+    private lateinit var study: CheckBox
+    private lateinit var chores: CheckBox
+    private lateinit var social_media: CheckBox
+    private lateinit var strangers: CheckBox
+    private lateinit var crime: CheckBox
+    private lateinit var news: CheckBox
+    private lateinit var politics: CheckBox
+    private lateinit var health: CheckBox
+    private lateinit var weather: CheckBox
+    private lateinit var sports: CheckBox
+    private lateinit var leisure: CheckBox
+    private lateinit var celebrity: CheckBox
+    private lateinit var finance: CheckBox
+    private lateinit var accident: CheckBox
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logging_third)
@@ -50,104 +52,67 @@ class Logging_thirdActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val selectedMood = intent.getStringExtra("selectedMood")
+
         mBtnNext.setOnClickListener {
-            val intent = Intent(this@Logging_thirdActivity, Logging_fourthActivity::class.java)
+            val selectedItems = getSelectedCheckBoxes()
+            val selectedMoodText = selectedMood ?: ""
+
+            val intent = Intent(this@Logging_thirdActivity, Logging_fourthActivity::class.java).apply {
+                putExtra("selectedMood", selectedMoodText)
+                putStringArrayListExtra("selectedItems", ArrayList(selectedItems))
+            }
             startActivity(intent)
         }
 
-        updateRadioGroup(friend)
         }
 
     private fun initialWidgets() {
 
-        friend = findViewById(R.id.rb_friend)
-        romantic_relationship = findViewById(R.id.rb_romantic_relationship)
-        family = findViewById(R.id.rb_family)
-        pets = findViewById(R.id.rb_pets)
-        work = findViewById(R.id.rb_work)
-        study = findViewById(R.id.rb_study)
-        chores = findViewById(R.id.rb_chores)
-        social_media = findViewById(R.id.rb_social_media)
-        strangers = findViewById(R.id.rb_strangers)
-        crime = findViewById(R.id.rb_crime)
-        news = findViewById(R.id.rb_news)
-        politics = findViewById(R.id.rb_politics)
-        weather = findViewById(R.id.rb_weather)
-        health = findViewById(R.id.rb_health)
-        sports = findViewById(R.id.rb_sports)
-        leisure = findViewById(R.id.rb_leisure)
-        celebrity = findViewById(R.id.rb_celebrity)
-        finance = findViewById(R.id.rb_finance)
-        accident = findViewById(R.id.rb_accident)
+        friend = findViewById(R.id.cb_friend)
+        romantic_relationship = findViewById(R.id.cb_romantic_relationship)
+        family = findViewById(R.id.cb_family)
+        pets = findViewById(R.id.cb_pets)
+        work = findViewById(R.id.cb_work)
+        study = findViewById(R.id.cb_study)
+        chores = findViewById(R.id.cb_chores)
+        social_media = findViewById(R.id.cb_social_media)
+        strangers = findViewById(R.id.cb_strangers)
+        crime = findViewById(R.id.cb_crime)
+        news = findViewById(R.id.cb_news)
+        politics = findViewById(R.id.cb_politics)
+        weather = findViewById(R.id.cb_weather)
+        health = findViewById(R.id.cb_health)
+        sports = findViewById(R.id.cb_sports)
+        leisure = findViewById(R.id.cb_leisure)
+        celebrity = findViewById(R.id.cb_celebrity)
+        finance = findViewById(R.id.cb_finance)
+        accident = findViewById(R.id.cb_accident)
     }
 
+    private fun getSelectedCheckBoxes(): List<String> {
+        val selectedCheckBoxes = mutableListOf<String>()
 
-    private fun updateRadioGroup(selected: RadioButton) {
-        friend.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        romantic_relationship.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        family.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        pets.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        work.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        study.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        chores.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        social_media.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        strangers.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        crime.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        news.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        politics.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        weather.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        health.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        sports.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        leisure.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        celebrity.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        finance.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
-        accident.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_off)
+        if (friend.isChecked) selectedCheckBoxes.add(friend.text.toString())
+        if (romantic_relationship.isChecked) selectedCheckBoxes.add(romantic_relationship.text.toString())
+        if (family.isChecked) selectedCheckBoxes.add(family.text.toString())
+        if (pets.isChecked) selectedCheckBoxes.add(pets.text.toString())
+        if (work.isChecked) selectedCheckBoxes.add(work.text.toString())
+        if (study.isChecked) selectedCheckBoxes.add(study.text.toString())
+        if (chores.isChecked) selectedCheckBoxes.add(chores.text.toString())
+        if (social_media.isChecked) selectedCheckBoxes.add(social_media.text.toString())
+        if (strangers.isChecked) selectedCheckBoxes.add(strangers.text.toString())
+        if (crime.isChecked) selectedCheckBoxes.add(crime.text.toString())
+        if (news.isChecked) selectedCheckBoxes.add(news.text.toString())
+        if (politics.isChecked) selectedCheckBoxes.add(politics.text.toString())
+        if (health.isChecked) selectedCheckBoxes.add(health.text.toString())
+        if (weather.isChecked) selectedCheckBoxes.add(weather.text.toString())
+        if (sports.isChecked) selectedCheckBoxes.add(sports.text.toString())
+        if (leisure.isChecked) selectedCheckBoxes.add(leisure.text.toString())
+        if (celebrity.isChecked) selectedCheckBoxes.add(celebrity.text.toString())
+        if (finance.isChecked) selectedCheckBoxes.add(finance.text.toString())
+        if (accident.isChecked) selectedCheckBoxes.add(accident.text.toString())
 
-        selected.background = ContextCompat.getDrawable(applicationContext, R.drawable.radio_on)
-
-    }
-
-    fun radioTapped(view: View) {
-        val selectedID: Int = view.id
-
-        if (selectedID == R.id.rb_friend) {
-            updateRadioGroup(friend)
-        } else if (selectedID == R.id.rb_romantic_relationship) {
-            updateRadioGroup(romantic_relationship)
-        } else if (selectedID == R.id.rb_family) {
-            updateRadioGroup(family)
-        } else if (selectedID == R.id.rb_pets) {
-            updateRadioGroup(pets)
-        } else if (selectedID == R.id.rb_work) {
-            updateRadioGroup(work)
-        } else if (selectedID == R.id.rb_study) {
-            updateRadioGroup(study)
-        } else if (selectedID == R.id.rb_chores) {
-            updateRadioGroup(chores)
-        } else if (selectedID == R.id.rb_social_media) {
-            updateRadioGroup(social_media)
-        } else if (selectedID == R.id.rb_strangers) {
-            updateRadioGroup(strangers)
-        } else if (selectedID == R.id.rb_crime) {
-            updateRadioGroup(crime)
-        } else if (selectedID == R.id.rb_news) {
-            updateRadioGroup(news)
-        } else if (selectedID == R.id.rb_politics) {
-            updateRadioGroup(politics)
-        } else if (selectedID == R.id.rb_health) {
-            updateRadioGroup(health)
-        } else if (selectedID == R.id.rb_weather) {
-            updateRadioGroup(weather)
-        } else if (selectedID == R.id.rb_sports) {
-            updateRadioGroup(sports)
-        } else if (selectedID == R.id.rb_leisure) {
-            updateRadioGroup(leisure)
-        } else if (selectedID == R.id.rb_celebrity) {
-            updateRadioGroup(celebrity)
-        } else if (selectedID == R.id.rb_finance) {
-            updateRadioGroup(finance)
-        } else if (selectedID == R.id.rb_accident) {
-            updateRadioGroup(accident)
-        }
+        return selectedCheckBoxes
     }
 }

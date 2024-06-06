@@ -12,6 +12,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.group49.mindfulmeadow_app.DataBase.Companion.recordMood
+import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.MoodRecord
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class Logging_fifthActivity : AppCompatActivity() {
 
@@ -20,6 +24,10 @@ class Logging_fifthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logging_fifth)
+
+        val elaborationText = intent.getStringExtra("elaborationText") ?: ""
+        val selectedMood = intent.getStringExtra("selectedMood") ?: ""
+        val selectedItems = intent.getStringArrayListExtra("selectedItems") ?: arrayListOf()
 
         val datePi = findViewById<DatePicker>(R.id.dp_1) as DatePicker
         val calendar :Calendar = Calendar.getInstance()
@@ -33,23 +41,46 @@ class Logging_fifthActivity : AppCompatActivity() {
         }
 
         mBtnSave.setOnClickListener {
-            val intent = Intent(this@Logging_fifthActivity, HomeActivity::class.java)
-            val builder = AlertDialog.Builder(this)
-            startActivity(intent)
-            builder.setTitle("Save Successful!")
-            builder.setMessage("Your log is saved!")
-            builder.show()
+            val selectedDate = "${datePi.year}-${datePi.month + 1}-${datePi.dayOfMonth}"
+            val formattedDate = formatDate(selectedDate)
+            val moodRecord = MoodRecord(
+                userId = "xxx",
+                logId = "xxx",
+                feeling = selectedMood,
+                description = selectedItems,
+                log = elaborationText,
+                date = formattedDate
+            )
+            recordMood(moodRecord) { success ->
+                if (success) {
+                    val builder = AlertDialog.Builder(this)
+                    builder.setTitle("Save Successful!")
+                    builder.setMessage("Your log is saved!,with $selectedMood,${selectedItems.toString()},$elaborationText, $selectedDate")
+                    builder.setPositiveButton("OK") { _, _ ->
+                        val intent = Intent(this@Logging_fifthActivity, HomeActivity::class.java)
+                        startActivity(intent)
+                    }
+                    builder.show()
+                } else {
+                    Toast.makeText(this, "Failed to save log.", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
 
         datePi.init(calendar.get(Calendar.YEAR),
                     calendar.get(Calendar.MONTH),
                     calendar.get(Calendar.DAY_OF_MONTH)
             ){view, year, monthOfYear, dayOfMonth ->
-            //TODO: Record into Database
             Toast.makeText(
                 applicationContext,
                 "#" + datePi.year + "-" + datePi.month + "-" + datePi.dayOfMonth + "/",
                 Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun formatDate(date: String): String {
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val parsedDate = sdf.parse(date)
+        return sdf.format(parsedDate)
     }
 }

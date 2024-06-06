@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -34,8 +35,17 @@ class Logging_DisgustActivity : AppCompatActivity() {
         }
 
         mBtnNext.setOnClickListener {
-            val intent = Intent(this@Logging_DisgustActivity, Logging_thirdActivity::class.java)
-            startActivity(intent)
+            val selectedRadioButtonId = mRG1.checkedRadioButtonId
+            if (selectedRadioButtonId != -1) {
+                val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId)
+                val selectedText = selectedRadioButton.text.toString()
+                val intent = Intent(this@Logging_DisgustActivity, Logging_thirdActivity::class.java).apply {
+                    putExtra("selectedMood", "Disgust: " + selectedText)
+                }
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Please select a mood.", Toast.LENGTH_SHORT).show()
+            }
         }
 
         mRG1.setOnCheckedChangeListener { group, checkedId ->

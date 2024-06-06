@@ -24,7 +24,8 @@ class DataBase {
                 "log_id" to moodRecord.logId,
                 "feeling" to moodRecord.feeling,
                 "description" to buffer.toString(),
-                "log_content" to moodRecord.log
+                "log_content" to moodRecord.log,
+                "date" to moodRecord.date
             )
 
             val db = Firebase.firestore
@@ -57,7 +58,8 @@ class DataBase {
                             data?.get("log_id").toString(),
                             data?.get("feeling").toString(),
                             data?.get("description").toString().split(","),
-                            data?.get("log_content").toString())
+                            data?.get("log_content").toString(),
+                            data?.get("date").toString())
                     }.filter { record -> record.userId == userId }.forEach { a ->
                         results.add(a)
                     }

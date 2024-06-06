@@ -32,150 +32,149 @@
             android:layout_below="@id/iv_back_to_snd"
             />
 
-        <RadioGroup
-            android:id="@+id/rg_event"
+        <LinearLayout
+            android:id="@+id/ll_event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_below="@id/tv_related_to"
             android:background="@drawable/radio_group_background"
             android:gravity="center">
 
-            <RadioButton
-                android:id="@+id/rb_friend"
+            <CheckBox
+                android:id="@+id/cb_friend"
                 android:text="Friends"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_romantic_relationship"
+            <CheckBox
+                android:id="@+id/cb_romantic_relationship"
                 android:text="Romantic Relationship"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_family"
+            <CheckBox
+                android:id="@+id/cb_family"
                 android:text="Family"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_pets"
+            <CheckBox
+                android:id="@+id/cb_pets"
                 android:text="Pets"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_work"
+            <CheckBox
+                android:id="@+id/cb_work"
                 android:text="Work"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_study"
+            <CheckBox
+                android:id="@+id/cb_study"
                 android:text="Study"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_chores"
+            <CheckBox
+                android:id="@+id/cb_chores"
                 android:text="Chores"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_social_media"
+            <CheckBox
+                android:id="@+id/cb_social_media"
                 android:text="Social Media"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_strangers"
+            <CheckBox
+                android:id="@+id/cb_strangers"
                 android:text="Strangers"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_crime"
+            <CheckBox
+                android:id="@+id/cb_crime"
                 android:text="Crime"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_news"
+            <CheckBox
+                android:id="@+id/cb_news"
                 android:text="News"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_politics"
+            <CheckBox
+                android:id="@+id/cb_politics"
                 android:text="Politics"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_health"
+            <CheckBox
+                android:id="@+id/cb_health"
                 android:text="Health"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_weather"
+            <CheckBox
+                android:id="@+id/cb_weather"
                 android:text="Weather"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_sports"
+            <CheckBox
+                android:id="@+id/cb_sports"
                 android:text="Sports"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_leisure"
+            <CheckBox
+                android:id="@+id/cb_leisure"
                 android:text="Leisure"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_celebrity"
+            <CheckBox
+                android:id="@+id/cb_celebrity"
                 android:text="Celebrity"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_finance"
+            <CheckBox
+                android:id="@+id/cb_finance"
                 android:text="Finance"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-            <RadioButton
-                android:id="@+id/rb_accident"
+            <CheckBox
+                android:id="@+id/cb_accident"
                 android:text="Accident"
                 android:background="@drawable/radio_off"
                 style="@style/RadioButtonStyle"
                 />
 
-
-        </RadioGroup>
-
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_event_next"
@@ -183,7 +182,7 @@
             android:layout_height="wrap_content"
             android:text="Next"
             android:textSize="20sp"
-            android:layout_below="@id/rg_event"
+            android:layout_below="@id/ll_event"
             android:layout_marginTop="20dp"/>
 
     </RelativeLayout>

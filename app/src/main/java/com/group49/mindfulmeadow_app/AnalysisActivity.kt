@@ -56,7 +56,7 @@ class AnalysisActivity : AppCompatActivity() {
                     true
                 }
                 R.id.log_graph -> {
-                    startActivity(Intent(applicationContext, GraphActivity::class.java))
+                    startActivity(Intent(applicationContext, Graph_WeekActivity::class.java))
                     finish()
                     true
                 }

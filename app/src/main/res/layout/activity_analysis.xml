@@ -95,4 +95,6 @@
         app:menu="@menu/bottom_navi_menu"
         />
 
+
+
 </RelativeLayout>

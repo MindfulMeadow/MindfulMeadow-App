@@ -13,6 +13,12 @@
         android:theme="@style/Theme.MindfulMeadowApp"
         tools:targetApi="31">
         <activity
+            android:name=".Graph_YearActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Graph_MonthActivity"
+            android:exported="false" />
+        <activity
             android:name=".Logging_Process.Logging_fifthActivity"
             android:exported="false" />
         <activity
@@ -43,7 +49,7 @@
             android:name=".AnalysisActivity"
             android:exported="true" />
         <activity
-            android:name=".GraphActivity"
+            android:name=".Graph_WeekActivity"
             android:exported="true" />
         <activity
             android:name=".HistoryActivity"

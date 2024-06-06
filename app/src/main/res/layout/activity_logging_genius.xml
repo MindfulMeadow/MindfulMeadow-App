@@ -37,66 +37,66 @@
         android:layout_marginTop="20dp">
 
         <RadioButton
-            android:id="@+id/rb_genius_a"
+            android:id="@+id/rb_genius_inspired"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="a"
+            android:text="Inspired"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 
         <RadioButton
-            android:id="@+id/rb_genius_b"
+            android:id="@+id/rb_genius_in_flow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="b"
+            android:text="In Flow"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 
         <RadioButton
-            android:id="@+id/rb_genius_c"
+            android:id="@+id/rb_genius_confident"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="c"
+            android:text="Confident"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 
         <RadioButton
-            android:id="@+id/rb_genius_d"
+            android:id="@+id/rb_genius_focused"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="d"
+            android:text="Focused"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 
         <RadioButton
-            android:id="@+id/rb_genius_e"
+            android:id="@+id/rb_genius_creative"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="e"
+            android:text="Creative"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 
         <RadioButton
-            android:id="@+id/rb_genius_f"
+            android:id="@+id/rb_genius_passionate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="f"
+            android:text="Passionate"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 
         <RadioButton
-            android:id="@+id/rb_genius_g"
+            android:id="@+id/rb_genius_challenged"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="g"
+            android:text="Challenged"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 
         <RadioButton
-            android:id="@+id/rb_genius_h"
+            android:id="@+id/rb_genius_motivated"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="h"
+            android:text="Motivated"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 

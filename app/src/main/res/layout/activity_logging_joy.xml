@@ -53,10 +53,10 @@
             android:textSize="40sp"/>
 
         <RadioButton
-            android:id="@+id/rb_joy_curios"
+            android:id="@+id/rb_joy_curious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Curios"
+            android:text="Curious"
             android:textColor="@color/black"
             android:textSize="40sp"/>
 

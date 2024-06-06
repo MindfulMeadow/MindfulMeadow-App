@@ -14,6 +14,7 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
+import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.group49.mindfulmeadow_app.DataBase.Companion.getMoodRecordsAndConsume
 import com.group49.mindfulmeadow_app.Logging_Process.Logging_fstActivity
@@ -186,6 +187,17 @@ class Graph_WeekActivity : AppCompatActivity() {
         }
 
         val barDataSet = BarDataSet(barEntries, "Emotion Scores")
+        barDataSet.colors = barEntries.map { entry ->
+            when (entry.y.toInt()) {
+                in 1..8 -> getColor(R.color.purple)
+                in 9..16 -> getColor(R.color.blue)
+                in 17..24 -> getColor(R.color.red)
+                in 25..32 -> getColor(R.color.green)
+                in 33..40 -> getColor(R.color.red)
+                in 41..48 -> getColor(R.color.orange)
+                else -> resources.getColor(R.color.gray)
+            }
+        }
         val barData = BarData(barDataSet)
 
         barChart.data = barData
@@ -193,7 +205,7 @@ class Graph_WeekActivity : AppCompatActivity() {
         barChart.setFitBars(true)
 
         val xAxis = barChart.xAxis
-        xAxis.valueFormatter = IndexAxisValueFormatter(dateList)
+        xAxis.valueFormatter = MonthDayFormatter(dateList)
         xAxis.position = XAxis.XAxisPosition.BOTTOM
         xAxis.setDrawGridLines(false)
         xAxis.granularity = 1f
@@ -203,4 +215,18 @@ class Graph_WeekActivity : AppCompatActivity() {
         barChart.invalidate() // refresh
     }
 
+    class MonthDayFormatter(private val dates: List<String>) : IndexAxisValueFormatter() {
+        private val inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        private val outputFormatter = DateTimeFormatter.ofPattern("MM-dd")
+
+        override fun getFormattedValue(value: Float): String {
+            val index = value.toInt()
+            return if (index >= 0 && index < dates.size) {
+                val date = LocalDate.parse(dates[index], inputFormatter)
+                date.format(outputFormatter)
+            } else {
+                ""
+            }
+        }
+    }
 }

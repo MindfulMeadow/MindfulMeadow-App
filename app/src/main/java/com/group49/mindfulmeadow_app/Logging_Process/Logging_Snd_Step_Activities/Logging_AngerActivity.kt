@@ -1,6 +1,5 @@
-package com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities
+package com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -8,16 +7,12 @@ import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.group49.mindfulmeadow_app.Logging_fstActivity
-import com.group49.mindfulmeadow_app.Logging_thirdActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_fstActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_thirdActivity
 import com.group49.mindfulmeadow_app.R
 
-class Logging_JoyActivity : AppCompatActivity() {
+class Logging_AngerActivity : AppCompatActivity() {
 
     private lateinit var mRG1: RadioGroup
     private lateinit var mBtnBackToFst: ImageView
@@ -25,14 +20,14 @@ class Logging_JoyActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_logging_joy)
+        setContentView(R.layout.activity_logging_anger)
 
         mBtnBackToFst = findViewById(R.id.iv_back_to_fst)
-        mRG1 = findViewById(R.id.rg_joy)
-        mBtnNext = findViewById(R.id.btn_joy_next)
+        mRG1 = findViewById(R.id.rg_anger)
+        mBtnNext = findViewById(R.id.btn_anger_next)
 
         mBtnBackToFst.setOnClickListener {
-            val intent = Intent(this@Logging_JoyActivity, Logging_fstActivity::class.java)
+            val intent = Intent(this@Logging_AngerActivity, Logging_fstActivity::class.java)
             startActivity(intent)
         }
 
@@ -41,8 +36,8 @@ class Logging_JoyActivity : AppCompatActivity() {
             if (selectedRadioButtonId != -1) {
                 val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId)
                 val selectedText = selectedRadioButton.text.toString()
-                val intent = Intent(this@Logging_JoyActivity, Logging_thirdActivity::class.java).apply {
-                    putExtra("selectedMood", "Joy: " + selectedText)
+                val intent = Intent(this@Logging_AngerActivity, Logging_thirdActivity::class.java).apply {
+                    putExtra("selectedMood", "Anger: " + selectedText)
                 }
                 startActivity(intent)
             } else {
@@ -52,9 +47,6 @@ class Logging_JoyActivity : AppCompatActivity() {
 
         mRG1.setOnCheckedChangeListener { group, checkedId ->
             val radioButton = group.findViewById<RadioButton>(checkedId)
-
-            // Here We get the text of the button, such as Calm, Kind...
-            // TODO: Record it into database
             val text = radioButton.text
         }
     }

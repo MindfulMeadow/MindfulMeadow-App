@@ -1,15 +1,12 @@
 package com.group49.mindfulmeadow_app
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.Firebase
-import com.google.firebase.firestore.firestore
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_fstActivity
 
 class HomeActivity : AppCompatActivity() {
 

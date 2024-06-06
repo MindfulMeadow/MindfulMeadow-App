@@ -13,31 +13,31 @@
         android:theme="@style/Theme.MindfulMeadowApp"
         tools:targetApi="31">
         <activity
-            android:name=".Logging_fifthActivity"
+            android:name=".Logging_Process.Logging_fifthActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_fourthActivity"
+            android:name=".Logging_Process.Logging_fourthActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_Snd_Step_Activities.Logging_SadActivity"
+            android:name=".Logging_Process.Logging_Snd_Step_Activities.Logging_SadActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_Snd_Step_Activities.Logging_FearActivity"
+            android:name=".Logging_Process.Logging_Snd_Step_Activities.Logging_FearActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_Snd_Step_Activities.Logging_AngerActivity"
+            android:name=".Logging_Process.Logging_Snd_Step_Activities.Logging_AngerActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_Snd_Step_Activities.Logging_DisgustActivity"
+            android:name=".Logging_Process.Logging_Snd_Step_Activities.Logging_DisgustActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_Snd_Step_Activities.Logging_GeniusActivity"
+            android:name=".Logging_Process.Logging_Snd_Step_Activities.Logging_GeniusActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_thirdActivity"
+            android:name=".Logging_Process.Logging_thirdActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_Snd_Step_Activities.Logging_JoyActivity"
+            android:name=".Logging_Process.Logging_Snd_Step_Activities.Logging_JoyActivity"
             android:exported="false" />
         <activity
             android:name=".AnalysisActivity"
@@ -49,7 +49,7 @@
             android:name=".HistoryActivity"
             android:exported="false" />
         <activity
-            android:name=".Logging_fstActivity"
+            android:name=".Logging_Process.Logging_fstActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"

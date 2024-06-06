@@ -4,11 +4,6 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
-import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.MoodRecord
-import kotlinx.coroutines.delay
-import java.lang.Thread.sleep
-import java.util.Optional
-import java.util.concurrent.Future
 
 class DataBase {
 

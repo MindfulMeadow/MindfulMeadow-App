@@ -1,4 +1,4 @@
-package com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities
+package com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,15 +7,12 @@ import android.widget.ImageView
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.group49.mindfulmeadow_app.Logging_fstActivity
-import com.group49.mindfulmeadow_app.Logging_thirdActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_fstActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_thirdActivity
 import com.group49.mindfulmeadow_app.R
 
-class Logging_SadActivity : AppCompatActivity() {
+class Logging_DisgustActivity : AppCompatActivity() {
 
     private lateinit var mRG1: RadioGroup
     private lateinit var mBtnBackToFst: ImageView
@@ -23,14 +20,14 @@ class Logging_SadActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_logging_sad)
+        setContentView(R.layout.activity_logging_disgust)
 
         mBtnBackToFst = findViewById(R.id.iv_back_to_fst)
-        mRG1 = findViewById(R.id.rg_sad)
-        mBtnNext = findViewById(R.id.btn_sad_next)
+        mRG1 = findViewById(R.id.rg_disgust)
+        mBtnNext = findViewById(R.id.btn_disgust_next)
 
         mBtnBackToFst.setOnClickListener {
-            val intent = Intent(this@Logging_SadActivity, Logging_fstActivity::class.java)
+            val intent = Intent(this@Logging_DisgustActivity, Logging_fstActivity::class.java)
             startActivity(intent)
         }
 
@@ -39,8 +36,8 @@ class Logging_SadActivity : AppCompatActivity() {
             if (selectedRadioButtonId != -1) {
                 val selectedRadioButton = findViewById<RadioButton>(selectedRadioButtonId)
                 val selectedText = selectedRadioButton.text.toString()
-                val intent = Intent(this@Logging_SadActivity, Logging_thirdActivity::class.java).apply {
-                    putExtra("selectedMood", "Sad: " + selectedText)
+                val intent = Intent(this@Logging_DisgustActivity, Logging_thirdActivity::class.java).apply {
+                    putExtra("selectedMood", "Disgust: " + selectedText)
                 }
                 startActivity(intent)
             } else {

@@ -1,4 +1,4 @@
-package com.group49.mindfulmeadow_app
+package com.group49.mindfulmeadow_app.Logging_Process
 
 import android.content.Intent
 import android.icu.util.Calendar
@@ -7,13 +7,12 @@ import android.widget.Button
 import android.widget.DatePicker
 import android.widget.ImageView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.group49.mindfulmeadow_app.DataBase.Companion.recordMood
-import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.MoodRecord
+import com.group49.mindfulmeadow_app.HomeActivity
+import com.group49.mindfulmeadow_app.MoodRecord
+import com.group49.mindfulmeadow_app.R
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -43,9 +42,10 @@ class Logging_fifthActivity : AppCompatActivity() {
         mBtnSave.setOnClickListener {
             val selectedDate = "${datePi.year}-${datePi.month + 1}-${datePi.dayOfMonth}"
             val formattedDate = formatDate(selectedDate)
+            val logId = generateLogId()
             val moodRecord = MoodRecord(
                 userId = "xxx",
-                logId = "xxx",
+                logId = logId,
                 feeling = selectedMood,
                 description = selectedItems,
                 log = elaborationText,
@@ -55,7 +55,7 @@ class Logging_fifthActivity : AppCompatActivity() {
                 if (success) {
                     val builder = AlertDialog.Builder(this)
                     builder.setTitle("Save Successful!")
-                    builder.setMessage("Your log is saved!,with $selectedMood,${selectedItems.toString()},$elaborationText, $selectedDate")
+                    builder.setMessage("Your log is saved!,with $selectedMood,${selectedItems.toString()},$elaborationText, $selectedDate, $logId")
                     builder.setPositiveButton("OK") { _, _ ->
                         val intent = Intent(this@Logging_fifthActivity, HomeActivity::class.java)
                         startActivity(intent)
@@ -76,6 +76,11 @@ class Logging_fifthActivity : AppCompatActivity() {
                 "#" + datePi.year + "-" + datePi.month + "-" + datePi.dayOfMonth + "/",
                 Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun generateLogId(): String {
+        val timestamp = System.currentTimeMillis()
+        return "log-$timestamp"
     }
 
     private fun formatDate(date: String): String {

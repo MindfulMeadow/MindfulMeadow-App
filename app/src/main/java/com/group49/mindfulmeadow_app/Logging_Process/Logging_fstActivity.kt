@@ -1,15 +1,17 @@
-package com.group49.mindfulmeadow_app
+package com.group49.mindfulmeadow_app.Logging_Process
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_AngerActivity
-import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_DisgustActivity
-import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_FearActivity
-import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_GeniusActivity
-import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_JoyActivity
-import com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities.Logging_SadActivity
+import com.group49.mindfulmeadow_app.HomeActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities.Logging_AngerActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities.Logging_DisgustActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities.Logging_FearActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities.Logging_GeniusActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities.Logging_JoyActivity
+import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities.Logging_SadActivity
+import com.group49.mindfulmeadow_app.R
 
 class Logging_fstActivity : AppCompatActivity() {
 
@@ -40,37 +42,32 @@ class Logging_fstActivity : AppCompatActivity() {
         mBtnSad = findViewById(R.id.iv_sad)
 
         mBtnJoy.setOnClickListener {
-            //TODO: 记录emotion joy
             val intent = Intent(this@Logging_fstActivity, Logging_JoyActivity::class.java)
             startActivity(intent)
         }
 
         mBtnGenius.setOnClickListener {
-            //TODO: 记录emotion genius
             val intent = Intent(this@Logging_fstActivity, Logging_GeniusActivity::class.java)
             startActivity(intent)
         }
 
         mBtnDisgust.setOnClickListener {
-            //TODO: 记录emotion disgust
             val intent = Intent(this@Logging_fstActivity, Logging_DisgustActivity::class.java)
             startActivity(intent)
         }
 
         mBtnAnger.setOnClickListener {
-            //TODO: 记录emotion anger
             val intent = Intent(this@Logging_fstActivity, Logging_AngerActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
         }
 
         mBtnFear.setOnClickListener {
-            //TODO: 记录emotion fear
             val intent = Intent(this@Logging_fstActivity, Logging_FearActivity::class.java)
             startActivity(intent)
         }
 
         mBtnSad.setOnClickListener {
-            //TODO: 记录emotion sad
             val intent = Intent(this@Logging_fstActivity, Logging_SadActivity::class.java)
             startActivity(intent)
         }

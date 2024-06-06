@@ -1,4 +1,4 @@
-package com.group49.mindfulmeadow_app.Logging_Snd_Step_Activities
+package com.group49.mindfulmeadow_app
 
 data class MoodRecord(
     val userId:String,

@@ -76,10 +76,10 @@ class DataBase {
             val passwordDigest = sha256(userPassword);
             val db = Firebase.firestore
 
-            val map = {
-                "username" to userName
+            val map = hashMapOf (
+                "username" to userName,
                 "password_digest" to passwordDigest
-            }
+                )
 
             db.collection("users")
                 .add(map)

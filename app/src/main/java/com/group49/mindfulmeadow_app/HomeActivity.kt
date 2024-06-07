@@ -23,9 +23,9 @@ class HomeActivity : AppCompatActivity() {
         mBtnStartLog.setOnClickListener {
 
             val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-            val userid = preferences.getString("userid", null)
+            val userid = preferences.getString("username", null)
             if(userid == null){
-                showBlockedPopup()
+                showLoginPanel()
                 return@setOnClickListener
             }
 
@@ -79,13 +79,8 @@ class HomeActivity : AppCompatActivity() {
         builder.show()
     }
 
-    private fun showBlockedPopup() {
-
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Please Log-in before logging!")
-        builder.setPositiveButton("OK") { dialog, _ ->
-            dialog.dismiss()
-        }
-        builder.show()
+    private fun showLoginPanel() {
+        startActivity(Intent(applicationContext, LogAndRegisterActivity::class.java))
+        finish()
     }
 }

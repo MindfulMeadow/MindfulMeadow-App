@@ -3,6 +3,7 @@ package com.group49.mindfulmeadow_app.Logging_Process
 import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.ImageView
@@ -41,30 +42,36 @@ class Logging_fifthActivity : AppCompatActivity() {
         }
 
         mBtnSave.setOnClickListener {
+            val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+            val username = preferences.getString("username", null)
             val selectedDate = "${datePi.year}-${datePi.month + 1}-${datePi.dayOfMonth}"
             val formattedDate = formatDate(selectedDate)
             val logId = generateLogId()
-            val moodRecord = MoodRecord(
-                userId = "xxx",
-                logId = logId,
-                feeling = selectedMood,
-                description = selectedItems,
-                log = elaborationText,
-                date = formattedDate
-            )
-            recordMood(moodRecord) { success ->
-                if (success) {
-                    val builder = AlertDialog.Builder(this)
-                    builder.setTitle("Save Successful!")
-                    builder.setMessage("Your log is saved!,with $selectedMood,${selectedItems.toString()},$elaborationText, $selectedDate, $logId")
-                    builder.setPositiveButton("OK") { _, _ ->
-                        val intent = Intent(this@Logging_fifthActivity, HomeActivity::class.java)
-                        startActivity(intent)
-                        overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
+            val moodRecord = username?.let { it1 ->
+                MoodRecord(
+                    userId = it1,
+                    logId = logId,
+                    feeling = selectedMood,
+                    description = selectedItems,
+                    log = elaborationText,
+                    date = formattedDate
+                )
+            }
+            if (moodRecord != null) {
+                recordMood(moodRecord) { success ->
+                    if (success) {
+                        val builder = AlertDialog.Builder(this)
+                        builder.setTitle("Save Successful!")
+                        builder.setMessage("Your log is saved!,with $selectedMood,${selectedItems.toString()},$elaborationText, $selectedDate, $logId")
+                        builder.setPositiveButton("OK") { _, _ ->
+                            val intent = Intent(this@Logging_fifthActivity, HomeActivity::class.java)
+                            startActivity(intent)
+                            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
+                        }
+                        builder.show()
+                    } else {
+                        Toast.makeText(this, "Failed to save log.", Toast.LENGTH_SHORT).show()
                     }
-                    builder.show()
-                } else {
-                    Toast.makeText(this, "Failed to save log.", Toast.LENGTH_SHORT).show()
                 }
             }
         }

@@ -2,6 +2,7 @@ package com.group49.mindfulmeadow_app.Logging_Process
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.group49.mindfulmeadow_app.HomeActivity
@@ -12,6 +13,7 @@ import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities
 import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities.Logging_JoyActivity
 import com.group49.mindfulmeadow_app.Logging_Process.Logging_Snd_Step_Activities.Logging_SadActivity
 import com.group49.mindfulmeadow_app.R
+
 
 class Logging_fstActivity : AppCompatActivity() {
 
@@ -30,6 +32,8 @@ class Logging_fstActivity : AppCompatActivity() {
         mBtnBackToHome = findViewById(R.id.iv_back_to_home)
 
         mBtnBackToHome.setOnClickListener {
+
+
             val intent = Intent(this@Logging_fstActivity, HomeActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )

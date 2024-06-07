@@ -2,6 +2,7 @@ package com.group49.mindfulmeadow_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,14 @@ class HomeActivity : AppCompatActivity() {
         mBtnMeaning = findViewById(R.id.btn_meadow_meaning)
 
         mBtnStartLog.setOnClickListener {
+
+            val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+            val userid = preferences.getString("userid", null)
+            if(userid == null){
+                showBlockedPopup()
+                return@setOnClickListener
+            }
+
             val intent = Intent(this@HomeActivity, Logging_fstActivity::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
@@ -64,6 +73,16 @@ class HomeActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("What does my meadow mean?")
         builder.setMessage("This meadow is a visual representation of your emotional state: flowers grow when your emotional state is healthy; grass wither when you need to take better care of your emotional state.") // Replace with your actual text
+        builder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss()
+        }
+        builder.show()
+    }
+
+    private fun showBlockedPopup() {
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Please Log-in before logging!")
         builder.setPositiveButton("OK") { dialog, _ ->
             dialog.dismiss()
         }

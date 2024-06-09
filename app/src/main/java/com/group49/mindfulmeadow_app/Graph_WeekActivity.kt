@@ -3,6 +3,7 @@ package com.group49.mindfulmeadow_app
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
@@ -65,7 +66,9 @@ class Graph_WeekActivity : AppCompatActivity() {
         val dateList = getLastSevenDaysAsString()
 
         // get emotionScore
-        val userId = "xxx"
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val username: String = preferences.getString("username", "") ?: ""
+        val userId = username
         getMoodRecordsAndConsume(userId) { moodRecords ->
             if (moodRecords != null) {
                 val emotionScores = getEmotionScoreFromListOfMoodRecordInGivenDate(moodRecords, dateList)

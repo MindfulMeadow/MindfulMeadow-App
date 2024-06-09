@@ -30,15 +30,29 @@ class LogAndRegisterActivity : AppCompatActivity() {
         tv_log_in = findViewById(R.id.tv_log_in)
 
         tv_log_in.setOnClickListener {
-            DataBase.verifyUserCredentials(et_username.text.toString(), et_password.text.toString(), {
-                a -> OnLoginResultReturn(a, et_username.text.toString())
-            })
+            val username = et_username.text.toString()
+            val password = et_password.text.toString()
+
+            if (username.isEmpty() || password.isEmpty()) {
+                showErrorDialog("Username and Password cannot be empty")
+            } else {
+                DataBase.verifyUserCredentials(username, password) { success ->
+                    OnLoginResultReturn(success, username)
+                }
+            }
         }
 
         tv_register.setOnClickListener{
-            DataBase.registerUser(et_username.text.toString(), et_password.text.toString(), resultCallBack = {
-                a -> OnRegisterResultReturn(a, et_username.text.toString())
-            })
+            val username = et_username.text.toString()
+            val password = et_password.text.toString()
+
+            if (username.isEmpty() || password.isEmpty()) {
+                showErrorDialog("Username and Password cannot be empty")
+            } else {
+                DataBase.registerUser(username, password) { success ->
+                    OnRegisterResultReturn(success, username)
+                }
+            }
         }
     }
 
@@ -55,12 +69,7 @@ class LogAndRegisterActivity : AppCompatActivity() {
             }
             builder.show()
         } else {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("Wrong credentials, please try again")
-            builder.setPositiveButton("OK") { dialog, _ ->
-                dialog.dismiss()
-            }
-            builder.show()
+            showErrorDialog("Wrong credentials, please try again")
         }
     }
 
@@ -76,12 +85,17 @@ class LogAndRegisterActivity : AppCompatActivity() {
             }
             builder.show()
         } else {
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("Register Failed, please try again")
-            builder.setPositiveButton("OK") { dialog, _ ->
-                dialog.dismiss()
-            }
-            builder.show()
+            showErrorDialog("Register Failed, please try again")
         }
+    }
+
+    private fun showErrorDialog(message: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage(message)
+        builder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss()
+        }
+        builder.show()
     }
 }

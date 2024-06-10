@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.group49.mindfulmeadow_app.R
@@ -13,6 +14,7 @@ class Logging_thirdActivity : AppCompatActivity() {
     private lateinit var mBtnBackToSnd: ImageView
     private lateinit var mBtnNext: Button
 
+    private lateinit var et_others: EditText
     private lateinit var friend: CheckBox
     private lateinit var romantic_relationship: CheckBox
     private lateinit var family: CheckBox
@@ -40,6 +42,7 @@ class Logging_thirdActivity : AppCompatActivity() {
 
         mBtnBackToSnd = findViewById(R.id.iv_back_to_snd)
         mBtnNext = findViewById(R.id.btn_event_next)
+        et_others = findViewById(R.id.et_others)
 
         mBtnBackToSnd.setOnClickListener {
             val intent = Intent(this@Logging_thirdActivity, Logging_fstActivity::class.java)
@@ -88,6 +91,7 @@ class Logging_thirdActivity : AppCompatActivity() {
 
     private fun getSelectedCheckBoxes(): List<String> {
         val selectedCheckBoxes = mutableListOf<String>()
+        val othersText = et_others.text.toString()
 
         if (friend.isChecked) selectedCheckBoxes.add(friend.text.toString())
         if (romantic_relationship.isChecked) selectedCheckBoxes.add(romantic_relationship.text.toString())
@@ -108,6 +112,10 @@ class Logging_thirdActivity : AppCompatActivity() {
         if (celebrity.isChecked) selectedCheckBoxes.add(celebrity.text.toString())
         if (finance.isChecked) selectedCheckBoxes.add(finance.text.toString())
         if (accident.isChecked) selectedCheckBoxes.add(accident.text.toString())
+
+        if (othersText.isNotEmpty()) {
+            selectedCheckBoxes.add(othersText)
+        }
 
         return selectedCheckBoxes
     }

@@ -178,7 +178,22 @@ class Graph_WeekActivity : AppCompatActivity() {
             "Genius: Motivated" to 48.0f
         )
 
-        val totalScore = records.map { scoreMap[it.feeling] ?: 0.0f }.sum()
+        val defaultScores = mapOf(
+            "Fear" to 1.0f,
+            "Sad" to 9.0f,
+            "Anger" to 17.0f,
+            "Disgust" to 25.0f,
+            "Joy" to 33.0f,
+            "Genius" to 41.0f
+        )
+
+        val totalScore = records.map { record ->
+            scoreMap[record.feeling] ?: run {
+                val key = record.feeling.split(":").first()
+                defaultScores[key] ?: 0.0f
+            }
+        }.sum()
+
         return totalScore / records.size
     }
 

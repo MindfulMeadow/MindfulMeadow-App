@@ -3,12 +3,39 @@ package com.group49.mindfulmeadow_app
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.group49.mindfulmeadow_app.DataBase.Companion.getMoodRecordsAndConsume
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class HistoryActivity : AppCompatActivity() {
+
+    private lateinit var moodRecordRecyclerView: RecyclerView
+    private lateinit var moodRecordAdapter: MoodRecordAdapter
+    private lateinit var moodRecords: List<MoodRecord>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
+
+        moodRecordRecyclerView = findViewById(R.id.moodRecordRecyclerView)
+        moodRecordRecyclerView.layoutManager = LinearLayoutManager(this)
+
+        val userId = "xxx" // Replace with actual user ID
+
+        getMoodRecordsAndConsume(userId) { records ->
+            if (records != null) {
+                moodRecords = sortMoodRecordsByDate(records)
+                moodRecordAdapter = MoodRecordAdapter(moodRecords) { selectedRecord ->
+                    val intent = Intent(this, MoodRecordDetailActivity::class.java).apply {
+                        putExtra("selectedMoodRecord", selectedRecord)
+                    }
+                    startActivity(intent)
+                }
+                moodRecordRecyclerView.adapter = moodRecordAdapter
+            }
+        }
 
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
@@ -36,5 +63,10 @@ class HistoryActivity : AppCompatActivity() {
             false
         }
 
+    }
+
+    private fun sortMoodRecordsByDate(records: List<MoodRecord>): List<MoodRecord> {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        return records.sortedByDescending { dateFormat.parse(it.date) }
     }
 }

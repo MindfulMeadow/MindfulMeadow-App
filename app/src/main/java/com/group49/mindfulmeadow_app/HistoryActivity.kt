@@ -2,6 +2,7 @@ package com.group49.mindfulmeadow_app
 
 import android.content.Intent
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +23,9 @@ class HistoryActivity : AppCompatActivity() {
         moodRecordRecyclerView = findViewById(R.id.moodRecordRecyclerView)
         moodRecordRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        val userId = "xxx" // Replace with actual user ID
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val username: String = preferences.getString("username", "") ?: ""
+        val userId = username
 
         getMoodRecordsAndConsume(userId) { records ->
             if (records != null) {
@@ -32,6 +35,7 @@ class HistoryActivity : AppCompatActivity() {
                         putExtra("selectedMoodRecord", selectedRecord)
                     }
                     startActivity(intent)
+                    overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
                 }
                 moodRecordRecyclerView.adapter = moodRecordAdapter
             }

@@ -79,14 +79,24 @@
             android:layout_weight="1"
             android:padding="10dp"/>
 
+        <Button
+            android:id="@+id/btn_analysis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate Analysis"
+            android:layout_marginTop="1dp"
+            android:layout_gravity="center"/>
+
         <!-- Analysis Image -->
-        <ImageView
-            android:id="@+id/imageView_Analysis"
+        <TextView
+            android:id="@+id/tv_analysis"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:scaleType="fitCenter"
-            android:src="@drawable/pseudo_week_analysis" />
+            android:text="Generating..."
+            android:textSize="25sp"
+            android:background="@drawable/et_background"/>
+
     </LinearLayout>
 
     <!-- Bottom Navigation View -->

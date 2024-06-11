@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -29,7 +30,8 @@ class Graph_WeekActivity : AppCompatActivity() {
     private lateinit var tvMonth: TextView
     private lateinit var tvWeek: TextView
     private lateinit var barChart: BarChart
-    private lateinit var imageViewAnalysis: ImageView
+    private lateinit var tv_analysis: ImageView
+    private lateinit var btn_analysis: Button
 
     private lateinit var graphWeekLayout: RelativeLayout
     private lateinit var moodBackgroundManager: MoodBackgroundManager
@@ -43,6 +45,10 @@ class Graph_WeekActivity : AppCompatActivity() {
         tvMonth = findViewById(R.id.tv_month)
         tvWeek = findViewById(R.id.tv_week)
         graphWeekLayout = findViewById(R.id.week_layout)
+
+        // Use for AI analysis: 你要用的时候就把comment去掉 To 木鱼
+//        tv_analysis = findViewById(R.id.tv_analysis)
+//        btn_analysis = findViewById(R.id.btn_analysis)
 
         moodBackgroundManager = MoodBackgroundManager(this, graphWeekLayout)
 

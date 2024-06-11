@@ -7,8 +7,19 @@ import android.widget.Button
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.aallam.openai.api.chat.ChatCompletion
+import com.aallam.openai.api.chat.ChatCompletionRequest
+import com.aallam.openai.api.chat.ChatMessage
+import com.aallam.openai.api.chat.ChatRole
+import com.aallam.openai.api.http.Timeout
+import com.aallam.openai.api.model.ModelId
+import com.aallam.openai.client.OpenAI
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.group49.mindfulmeadow_app.Logging_Process.Logging_fstActivity
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.seconds
 
 class HomeActivity : AppCompatActivity() {
 
@@ -80,6 +91,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun showMeaningPopup() {
+
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle("What does my meadow mean?")

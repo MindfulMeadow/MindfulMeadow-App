@@ -55,7 +55,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation (platform("com.aallam.openai:openai-client-bom:3.7.2"))
 
+    // define dependencies without versions
+    implementation ("com.aallam.openai:openai-client")
+    runtimeOnly ("io.ktor:ktor-client-okhttp")
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
 
     // Import the BoM for the Firebase platform

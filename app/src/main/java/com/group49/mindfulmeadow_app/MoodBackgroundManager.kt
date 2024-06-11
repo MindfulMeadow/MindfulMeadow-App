@@ -2,6 +2,7 @@ package com.group49.mindfulmeadow_app
 
 import android.content.Context
 import android.graphics.drawable.LayerDrawable
+import android.graphics.drawable.TransitionDrawable
 import android.widget.RelativeLayout
 import androidx.core.content.ContextCompat
 import com.group49.mindfulmeadow_app.DataBase.Companion.getMoodRecordsAndConsume
@@ -38,7 +39,7 @@ class MoodBackgroundManager(private val context: Context, private val rootLayout
     }
 
 
-    private fun calculateEmotionScore(records: List<MoodRecord>): Float {
+    public fun calculateEmotionScore(records: List<MoodRecord>): Float {
         if (records.isEmpty()) return 0f
 
         val scoreMap = mapOf(
@@ -144,8 +145,15 @@ class MoodBackgroundManager(private val context: Context, private val rootLayout
         }
 
         val layerDrawable = LayerDrawable(layers.toTypedArray())
+        val currentBackground = rootLayout.background
 
-        rootLayout.background = layerDrawable
+        if (currentBackground is LayerDrawable) {
+            rootLayout.background = layerDrawable
+        } else {
+            val transitionDrawable = TransitionDrawable(arrayOf(currentBackground, layerDrawable))
+            rootLayout.background = transitionDrawable
+            transitionDrawable.startTransition(1000)
+        }
     }
 }
 

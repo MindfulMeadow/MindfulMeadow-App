@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.preference.PreferenceManager
 import android.util.Log
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +31,9 @@ class Graph_WeekActivity : AppCompatActivity() {
     private lateinit var barChart: BarChart
     private lateinit var imageViewAnalysis: ImageView
 
+    private lateinit var graphWeekLayout: RelativeLayout
+    private lateinit var moodBackgroundManager: MoodBackgroundManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graph_week)
@@ -38,6 +42,15 @@ class Graph_WeekActivity : AppCompatActivity() {
         tvYear = findViewById(R.id.tv_year)
         tvMonth = findViewById(R.id.tv_month)
         tvWeek = findViewById(R.id.tv_week)
+        graphWeekLayout = findViewById(R.id.week_layout)
+
+        moodBackgroundManager = MoodBackgroundManager(this, graphWeekLayout)
+
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val username: String = preferences.getString("username", "") ?: ""
+        val userId = username
+
+        moodBackgroundManager.updateBackgroundBasedOnMoodRecords(userId)
 
         //Jump to corresponding page
         tvWeek.setOnClickListener {
@@ -66,9 +79,6 @@ class Graph_WeekActivity : AppCompatActivity() {
         val dateList = getLastSevenDaysAsString()
 
         // get emotionScore
-        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-        val username: String = preferences.getString("username", "") ?: ""
-        val userId = username
         getMoodRecordsAndConsume(userId) { moodRecords ->
             if (moodRecords != null) {
                 val emotionScores = getEmotionScoreFromListOfMoodRecordInGivenDate(moodRecords, dateList)

@@ -3,6 +3,7 @@ package com.group49.mindfulmeadow_app
 import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,16 +17,23 @@ class HistoryActivity : AppCompatActivity() {
     private lateinit var moodRecordRecyclerView: RecyclerView
     private lateinit var moodRecordAdapter: MoodRecordAdapter
     private lateinit var moodRecords: List<MoodRecord>
+
+    private lateinit var historyLayout: RelativeLayout
+    private lateinit var moodBackgroundManager: MoodBackgroundManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
         moodRecordRecyclerView = findViewById(R.id.moodRecordRecyclerView)
         moodRecordRecyclerView.layoutManager = LinearLayoutManager(this)
+        historyLayout = findViewById(R.id.history_layout)
+
+        moodBackgroundManager = MoodBackgroundManager(this, historyLayout)
 
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
         val username: String = preferences.getString("username", "") ?: ""
         val userId = username
+        moodBackgroundManager.updateBackgroundBasedOnMoodRecords(userId)
 
         getMoodRecordsAndConsume(userId) { records ->
             if (records != null) {

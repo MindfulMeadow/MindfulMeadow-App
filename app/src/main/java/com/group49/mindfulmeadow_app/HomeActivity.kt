@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.widget.Button
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -13,12 +14,22 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var mBtnStartLog: Button
     private lateinit var mBtnMeaning: Button
+    private lateinit var homeLayout: RelativeLayout
+    private lateinit var moodBackgroundManager: MoodBackgroundManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         mBtnStartLog = findViewById(R.id.btn_start_log)
         mBtnMeaning = findViewById(R.id.btn_meadow_meaning)
+        homeLayout = findViewById(R.id.home_layout)
+
+        moodBackgroundManager = MoodBackgroundManager(this, homeLayout)
+
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val username: String = preferences.getString("username", "") ?: ""
+        val userId = username
+        moodBackgroundManager.updateBackgroundBasedOnMoodRecords(userId)
 
         mBtnStartLog.setOnClickListener {
 

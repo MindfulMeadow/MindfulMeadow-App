@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp">
 
-        <!--    The back button-->
+        <!-- The back button -->
         <ImageView
             android:id="@+id/iv_back_to_snd"
             android:layout_width="wrap_content"
@@ -30,11 +30,10 @@
             android:text="What is it related to?"
             android:textSize="30sp"
             android:gravity="center"
-            android:layout_below="@id/iv_back_to_snd"
-            />
+            android:layout_below="@id/iv_back_to_snd" />
 
         <LinearLayout
-            android:id="@+id/ll_event"
+            android:id="@+id/ll_categories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -42,130 +41,162 @@
             android:background="@drawable/radio_group_background"
             android:gravity="center">
 
-            <CheckBox
-                android:id="@+id/cb_friend"
-                android:text="Friends"
-                style="@style/RadioButtonStyle"
-                />
+            <TextView
+                android:id="@+id/tv_people"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="People"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:background="@drawable/background_sad"
+                android:clickable="true"
+                android:focusable="true" />
 
-            <CheckBox
-                android:id="@+id/cb_romantic_relationship"
-                android:text="Romantic Relationship"
-                style="@style/RadioButtonStyle"
-                />
+            <LinearLayout
+                android:id="@+id/ll_people"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-            <CheckBox
-                android:id="@+id/cb_family"
-                android:text="Family"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_friend"
+                    android:text="Friends"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_pets"
-                android:text="Pets"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_romantic_relationship"
+                    android:text="Romantic Relationship"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_work"
-                android:text="Work"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_family"
+                    android:text="Family"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_study"
-                android:text="Study"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_pets"
+                    android:text="Pets"
+                    style="@style/RadioButtonStyle" />
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/cb_chores"
-                android:text="Chores"
-                style="@style/RadioButtonStyle"
-                />
+            <TextView
+                android:id="@+id/tv_things"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Things"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:background="@drawable/background_fear"
+                android:clickable="true"
+                android:focusable="true" />
 
-            <CheckBox
-                android:id="@+id/cb_social_media"
-                android:text="Social Media"
-                style="@style/RadioButtonStyle"
-                />
+            <LinearLayout
+                android:id="@+id/ll_things"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-            <CheckBox
-                android:id="@+id/cb_strangers"
-                android:text="Strangers"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_work"
+                    android:text="Work"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_crime"
-                android:text="Crime"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_study"
+                    android:text="Study"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_news"
-                android:text="News"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_chores"
+                    android:text="Chores"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_politics"
-                android:text="Politics"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_social_media"
+                    android:text="Social Media"
+                    style="@style/RadioButtonStyle" />
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/cb_health"
-                android:text="Health"
-                style="@style/RadioButtonStyle"
-                />
+            <TextView
+                android:id="@+id/tv_events"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="Events"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:background="@drawable/background_anger"
+                android:clickable="true"
+                android:focusable="true" />
 
-            <CheckBox
-                android:id="@+id/cb_weather"
-                android:text="Weather"
-                style="@style/RadioButtonStyle"
-                />
+            <LinearLayout
+                android:id="@+id/ll_events"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-            <CheckBox
-                android:id="@+id/cb_sports"
-                android:text="Sports"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_crime"
+                    android:text="Crime"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_leisure"
-                android:text="Leisure"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_news"
+                    android:text="News"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_celebrity"
-                android:text="Celebrity"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_politics"
+                    android:text="Politics"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_finance"
-                android:text="Finance"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_health"
+                    android:text="Health"
+                    style="@style/RadioButtonStyle" />
 
-            <CheckBox
-                android:id="@+id/cb_accident"
-                android:text="Accident"
-                style="@style/RadioButtonStyle"
-                />
+                <CheckBox
+                    android:id="@+id/cb_weather"
+                    android:text="Weather"
+                    style="@style/RadioButtonStyle" />
 
+                <CheckBox
+                    android:id="@+id/cb_sports"
+                    android:text="Sports"
+                    style="@style/RadioButtonStyle" />
+
+                <CheckBox
+                    android:id="@+id/cb_leisure"
+                    android:text="Leisure"
+                    style="@style/RadioButtonStyle" />
+
+                <CheckBox
+                    android:id="@+id/cb_celebrity"
+                    android:text="Celebrity"
+                    style="@style/RadioButtonStyle" />
+
+                <CheckBox
+                    android:id="@+id/cb_finance"
+                    android:text="Finance"
+                    style="@style/RadioButtonStyle" />
+
+                <CheckBox
+                    android:id="@+id/cb_accident"
+                    android:text="Accident"
+                    style="@style/RadioButtonStyle" />
+            </LinearLayout>
         </LinearLayout>
 
         <EditText
             android:id="@+id/et_others"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_below="@+id/ll_event"
+            android:layout_below="@+id/ll_categories"
             android:hint="Others"
             android:background="@drawable/green_background"
-            android:textSize="30sp"/>
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/btn_event_next"
@@ -174,9 +205,6 @@
             android:text="Next"
             android:textSize="20sp"
             android:layout_below="@id/et_others"
-            android:layout_marginTop="20dp"/>
-
+            android:layout_marginTop="20dp" />
     </RelativeLayout>
-
-
 </ScrollView>

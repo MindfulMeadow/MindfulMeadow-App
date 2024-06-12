@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-
+    id("org.jetbrains.kotlin.plugin.serialization") version("1.4.30")
     id("com.google.gms.google-services")
 }
 
@@ -56,7 +56,8 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (platform("com.aallam.openai:openai-client-bom:3.7.2"))
-
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    implementation("org.json:json:20230227")
     // define dependencies without versions
     implementation ("com.aallam.openai:openai-client")
     runtimeOnly ("io.ktor:ktor-client-okhttp")

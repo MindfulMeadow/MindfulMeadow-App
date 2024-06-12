@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 class MoodRecordDetailActivity : AppCompatActivity() {
 
     private lateinit var tvUserId: TextView
-    private lateinit var tvLogId: TextView
     private lateinit var tvFeeling: TextView
     private lateinit var tvDescription: TextView
     private lateinit var tvLog: TextView

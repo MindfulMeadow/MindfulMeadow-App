@@ -72,7 +72,8 @@ class AIResponse {
             )
             val completion: ChatCompletion = openai.chatCompletion(chatCompletionRequest)
             val context = JSONObject(completion.choices[0].message.content.toString())
-            return context.getString("Analysis");
+            println(context)
+            return context.getString("analysis");
         }
 
         private fun GetOpenAI(): OpenAI{

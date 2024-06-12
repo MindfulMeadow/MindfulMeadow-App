@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.group49.mindfulmeadow_app.After_SaveActivity
 import com.group49.mindfulmeadow_app.DataBase.Companion.recordMood
 import com.group49.mindfulmeadow_app.HomeActivity
 import com.group49.mindfulmeadow_app.MoodRecord
@@ -64,7 +65,8 @@ class Logging_fifthActivity : AppCompatActivity() {
                         builder.setTitle("Save Successful!")
                         builder.setMessage("Your log is saved!,with $selectedMood,${selectedItems.toString()},$elaborationText, $selectedDate, $logId")
                         builder.setPositiveButton("OK") { _, _ ->
-                            val intent = Intent(this@Logging_fifthActivity, HomeActivity::class.java)
+                            val intent = Intent(this@Logging_fifthActivity, After_SaveActivity::class.java)
+                            intent.putExtra("moodRecord", moodRecord)
                             startActivity(intent)
                             overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
                         }

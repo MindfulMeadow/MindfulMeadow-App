@@ -19,8 +19,12 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.group49.mindfulmeadow_app.AIResponse.Companion.generateAnalysis
 import com.group49.mindfulmeadow_app.DataBase.Companion.getMoodRecordsAndConsume
 import com.group49.mindfulmeadow_app.Logging_Process.Logging_fstActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -30,7 +34,7 @@ class Graph_WeekActivity : AppCompatActivity() {
     private lateinit var tvMonth: TextView
     private lateinit var tvWeek: TextView
     private lateinit var barChart: BarChart
-    private lateinit var tv_analysis: ImageView
+    private lateinit var tv_analysis: TextView
     private lateinit var btn_analysis: Button
 
     private lateinit var graphWeekLayout: RelativeLayout
@@ -47,8 +51,8 @@ class Graph_WeekActivity : AppCompatActivity() {
         graphWeekLayout = findViewById(R.id.week_layout)
 
         // Use for AI analysis: 你要用的时候就把comment去掉 To 木鱼
-//        tv_analysis = findViewById(R.id.tv_analysis)
-//        btn_analysis = findViewById(R.id.btn_analysis)
+        tv_analysis = findViewById(R.id.tv_analysis)
+        btn_analysis = findViewById(R.id.btn_analysis)
 
         moodBackgroundManager = MoodBackgroundManager(this, graphWeekLayout)
 
@@ -87,8 +91,16 @@ class Graph_WeekActivity : AppCompatActivity() {
         // get emotionScore
         getMoodRecordsAndConsume(userId) { moodRecords ->
             if (moodRecords != null) {
+                val lastSevenDaysRecords = moodRecords.filter { it.date in dateList }
                 val emotionScores = getEmotionScoreFromListOfMoodRecordInGivenDate(moodRecords, dateList)
                 setupBarChart(dateList, emotionScores)
+
+                btn_analysis.setOnClickListener {
+                    CoroutineScope(Dispatchers.Main).launch {
+                        val analysis = generateAnalysis(lastSevenDaysRecords)
+                        tv_analysis.text = analysis
+                    }
+                }
             } else {
                 // fail do what?
             }

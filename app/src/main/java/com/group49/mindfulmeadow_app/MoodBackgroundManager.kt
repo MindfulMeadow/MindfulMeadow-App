@@ -144,6 +144,8 @@ class MoodBackgroundManager(private val context: Context, private val rootLayout
             }
         }
 
+        layers.add(ContextCompat.getDrawable(context, R.drawable.white_filter))
+
         val layerDrawable = LayerDrawable(layers.toTypedArray())
         val currentBackground = rootLayout.background
 

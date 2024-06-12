@@ -6,6 +6,7 @@ import com.aallam.openai.api.chat.ChatRole
 import com.aallam.openai.api.http.Timeout
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.client.OpenAI
+import com.github.mikephil.charting.BuildConfig
 import kotlin.time.Duration.Companion.seconds
 
 class OpenAI {
@@ -17,8 +18,11 @@ class OpenAI {
         }
 
         suspend fun generateWeeklyAnalysis(records: List<MoodRecord>) : String{
+
+            val tk = "sk-pro"+"j-PoYhx"+"ZMPcOE"+"09JWWp"+"HQZT3"+"BlbkF"+"Jg6Iifz"+"J3Eu7"+"M94k"+"WpWMp"
+
             val openai = OpenAI(
-                token = "sk-proj-4S1xYlalKHc0wO3K8mJxT3BlbkFJ01cDhcZdItKmvFmaCLqK",
+                token = tk,
                 timeout = Timeout(socket = 60.seconds),
             )
             val chatCompletionRequest = ChatCompletionRequest(

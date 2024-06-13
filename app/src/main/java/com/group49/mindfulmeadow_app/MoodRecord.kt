@@ -8,5 +8,6 @@ data class MoodRecord(
     val feeling:String,
     val description:List<String>,
     val log:String,
-    val date:String
+    val date:String,
+    val imageUrl:String
 ) : Serializable

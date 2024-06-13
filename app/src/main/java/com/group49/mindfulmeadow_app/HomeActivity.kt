@@ -93,7 +93,6 @@ class HomeActivity : AppCompatActivity() {
 
     private fun showMeaningPopup() {
 
-
         val builder = AlertDialog.Builder(this)
         builder.setTitle("What does my meadow mean?")
         builder.setMessage("This meadow is a visual representation of your emotional state: flowers grow when your emotional state is healthy; grass wither when you need to take better care of your emotional state.") // Replace with your actual text

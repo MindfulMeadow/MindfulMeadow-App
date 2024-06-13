@@ -58,6 +58,11 @@ dependencies {
     implementation (platform("com.aallam.openai:openai-client-bom:3.7.2"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
     implementation("org.json:json:20230227")
+    implementation(platform("com.google.firebase:firebase-bom:32.8.0"))
+
+    // Add the dependency for the Cloud Storage library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-storage")
     // define dependencies without versions
     implementation ("com.aallam.openai:openai-client")
     runtimeOnly ("io.ktor:ktor-client-okhttp")

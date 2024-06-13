@@ -1,10 +1,13 @@
 package com.group49.mindfulmeadow_app
 
 import android.content.ContentValues.TAG
+import android.net.Uri
 import android.util.Log
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.Filter
 import com.google.firebase.firestore.firestore
+import com.google.firebase.storage.storage
+import java.io.File
 import java.security.MessageDigest
 import java.security.spec.MGF1ParameterSpec.SHA256
 
@@ -15,8 +18,8 @@ class DataBase {
 
     companion object {
         fun recordMood(moodRecord: MoodRecord, resultCallBack: (Boolean) -> Unit){
-            val buffer : StringBuffer = StringBuffer()
-            val serializedDescription = moodRecord.description.joinTo(buffer, ",");
+            val buffer = StringBuffer()
+            moodRecord.description.joinTo(buffer, ",");
 
             val mood_record = hashMapOf(
                 "user_id" to moodRecord.userId,
@@ -24,7 +27,8 @@ class DataBase {
                 "feeling" to moodRecord.feeling,
                 "description" to buffer.toString(),
                 "log_content" to moodRecord.log,
-                "date" to moodRecord.date
+                "date" to moodRecord.date,
+                "image" to moodRecord.imageUrl
             )
 
             val db = Firebase.firestore
@@ -58,7 +62,8 @@ class DataBase {
                             data?.get("feeling").toString(),
                             data?.get("description").toString().split(","),
                             data?.get("log_content").toString(),
-                            data?.get("date").toString())
+                            data?.get("date").toString(),
+                            data?.get("image").toString())
                     }.filter { record -> record.userId == userId }.forEach { a ->
                         results.add(a)
                     }
@@ -92,6 +97,41 @@ class DataBase {
                     resultCallBack(false)
                 }
         }
+
+        fun uploadFile(file : File, successCallBack: (String) -> Unit, failureCallBack: () -> Unit): Unit{
+            val storage = Firebase.storage
+            val storageRef = storage.reference
+            val f = Uri.fromFile(file)
+            val imagesRef = storageRef.child("images/${f.lastPathSegment}")
+            val uploadTask = imagesRef.putFile(f)
+            val urlTask = uploadTask.continueWithTask { task ->
+                if (!task.isSuccessful) {
+                    task.exception?.let {
+                        throw it
+                    }
+                }
+                imagesRef.downloadUrl
+            }.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    successCallBack(imagesRef.downloadUrl.toString())
+                } else {
+                    failureCallBack()
+                }
+            }
+        }
+
+        fun downloadFile(url: String, successCallBack: (File) -> Unit, failureCallBack: () -> Unit){
+            val storage = Firebase.storage
+            val httpsReference = storage.getReferenceFromUrl(url)
+            val localFile = File.createTempFile("temp_images", "jpg")
+            httpsReference.getFile(localFile).addOnSuccessListener {
+                successCallBack(localFile)
+            }.addOnFailureListener {
+                failureCallBack()
+            }
+        }
+
+
 
         fun verifyUserCredentials(userName: String, userPassword: String, resultCallBack: (Boolean) -> Unit){
 

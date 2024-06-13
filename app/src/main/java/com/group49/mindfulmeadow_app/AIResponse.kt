@@ -52,14 +52,12 @@ class AIResponse {
             }
             val logs = arr.joinToString("\n\n")
 
-
-
             val chatCompletionRequest = ChatCompletionRequest(
                 model = ModelId("gpt-4o"),
                 messages = listOf(
                     ChatMessage(
                         role = ChatRole.System,
-                        content = "You are a professional mental consultant who are capable of giving maximum support to consultee. You are given daily logs over a week of a patient who might or might not have mental issues. You are ask to give an analysis of the logs over the week to the patient to cheer they up, providing as much comfort and encouragement as possible. Please give a response in the format provided below, no matter the log content is. Do not give separate reports for individual days.\n" +
+                        content = "You are a professional mental consultant who are capable of giving maximum support to consultee. You are given daily logs over a week of a patient who might or might not have mental issues. You are ask to give an analysis of the logs over the week to the patient to cheer them up, providing as much comfort and encouragement as possible. Please give a response in the format provided below, no matter the log content is. Do not give separate reports for individual days.\n" +
                                 "\n" +
                                 "PLEASE respond in the following json format:\"{\"analysis\":\"[analysis]\"}\"\n" +
                                 "and remember do not give analysis for individual days. The report should be given in paragraphs with a friendly tone and should be around 200 words. Please insert a line break after pauses. Do not give any response other than the analysis."

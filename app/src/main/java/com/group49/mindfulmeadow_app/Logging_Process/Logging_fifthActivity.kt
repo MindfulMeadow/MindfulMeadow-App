@@ -12,7 +12,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.group49.mindfulmeadow_app.After_SaveActivity
 import com.group49.mindfulmeadow_app.DataBase.Companion.recordMood
-import com.group49.mindfulmeadow_app.HomeActivity
 import com.group49.mindfulmeadow_app.MoodRecord
 import com.group49.mindfulmeadow_app.R
 import java.text.SimpleDateFormat
@@ -22,6 +21,7 @@ class Logging_fifthActivity : AppCompatActivity() {
 
     private lateinit var mBtnSave: Button
     private lateinit var mBtnBackToFourth: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logging_fifth)
@@ -29,9 +29,10 @@ class Logging_fifthActivity : AppCompatActivity() {
         val elaborationText = intent.getStringExtra("elaborationText") ?: ""
         val selectedMood = intent.getStringExtra("selectedMood") ?: ""
         val selectedItems = intent.getStringArrayListExtra("selectedItems") ?: arrayListOf()
+        val imageUrl = intent.getStringExtra("imageUrl") ?: ""
 
-        val datePi = findViewById<DatePicker>(R.id.dp_1) as DatePicker
-        val calendar :Calendar = Calendar.getInstance()
+        val datePi = findViewById<DatePicker>(R.id.dp_1)
+        val calendar: Calendar = Calendar.getInstance()
 
         mBtnSave = findViewById(R.id.btn_date_save)
         mBtnBackToFourth = findViewById(R.id.iv_back_to_fourth)
@@ -39,7 +40,7 @@ class Logging_fifthActivity : AppCompatActivity() {
         mBtnBackToFourth.setOnClickListener {
             val intent = Intent(this@Logging_fifthActivity, Logging_fourthActivity::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
+            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim)
         }
 
         mBtnSave.setOnClickListener {
@@ -55,7 +56,8 @@ class Logging_fifthActivity : AppCompatActivity() {
                     feeling = selectedMood,
                     description = selectedItems,
                     log = elaborationText,
-                    date = formattedDate
+                    date = formattedDate,
+                    imageUrl = imageUrl
                 )
             }
             if (moodRecord != null) {
@@ -63,7 +65,7 @@ class Logging_fifthActivity : AppCompatActivity() {
                     if (success) {
                         val builder = AlertDialog.Builder(this)
                         builder.setTitle("Save Successful!")
-                        builder.setMessage("Your log is saved!,with $selectedMood,${selectedItems.toString()},$elaborationText, $selectedDate, $logId")
+                        builder.setMessage("Your log is saved!,with $selectedMood,${selectedItems.toString()},$elaborationText, $selectedDate, $logId, $imageUrl")
                         builder.setPositiveButton("OK") { _, _ ->
                             val intent = Intent(this@Logging_fifthActivity, After_SaveActivity::class.java)
                             intent.putExtra("moodRecord", moodRecord)
@@ -78,14 +80,16 @@ class Logging_fifthActivity : AppCompatActivity() {
             }
         }
 
-        datePi.init(calendar.get(Calendar.YEAR),
-                    calendar.get(Calendar.MONTH),
-                    calendar.get(Calendar.DAY_OF_MONTH)
-            ){view, year, monthOfYear, dayOfMonth ->
+        datePi.init(
+            calendar.get(Calendar.YEAR),
+            calendar.get(Calendar.MONTH),
+            calendar.get(Calendar.DAY_OF_MONTH)
+        ) { _, _, _, _ ->
             Toast.makeText(
                 applicationContext,
-                "#" + datePi.year + "-" + datePi.month + "-" + datePi.dayOfMonth + "/",
-                Toast.LENGTH_LONG)
+                "#${datePi.year}-${datePi.month}-${datePi.dayOfMonth}/",
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 

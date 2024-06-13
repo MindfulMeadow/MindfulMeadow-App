@@ -1,65 +1,91 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/log_fourth_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/green_background"
     android:padding="10dp"
-    tools:context=".Logging_Process.Logging_fourthActivity"
-    android:background="@drawable/green_background">
+    tools:context=".Logging_Process.Logging_fourthActivity">
 
-    <!--    The back button-->
-    <ImageView
-        android:id="@+id/iv_back_to_third"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:clickable="true"
-        android:src="@drawable/baseline_arrow_back_24" />
-
-    <TextView
-        android:id="@+id/tv_elaborate"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Would you like to elaborate?"
-        android:textSize="30sp"
-        android:gravity="center"
-        android:layout_below="@id/iv_back_to_third"
-        />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tv_tips"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="This will help us to provide you with more accurate analysis and suggestions."
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@color/blue_green"
-        android:layout_below="@id/tv_elaborate"
-        android:layout_marginTop="10dp"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
 
-    <EditText
-        android:id="@+id/et_1"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:background="@drawable/et_background"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:hint="Type here(Optional)..."
-        android:gravity="top"
-        android:padding="5dp"
-        android:layout_below="@id/tv_tips"
-        android:layout_marginTop="30dp"/>
+            <!-- The back button -->
+            <ImageView
+                android:id="@+id/iv_back_to_third"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:clickable="true"
+                android:src="@drawable/baseline_arrow_back_24" />
 
-    <Button
-        android:id="@+id/btn_event_next"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        android:textSize="20sp"
-        android:layout_below="@id/et_1"
-        android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/tv_elaborate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Would you like to elaborate?"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:layout_below="@id/iv_back_to_third" />
 
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This will help us to provide you with more accurate analysis and suggestions."
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="@color/blue_green"
+                android:layout_below="@id/tv_elaborate"
+                android:layout_marginTop="10dp" />
+
+            <EditText
+                android:id="@+id/et_1"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:background="@drawable/et_background"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:hint="Type here(Optional)..."
+                android:gravity="top"
+                android:padding="5dp"
+                android:layout_below="@id/tv_tips"
+                android:layout_marginTop="30dp" />
+
+            <ImageView
+                android:id="@+id/iv_uploaded_image"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/et_1"
+                android:layout_marginTop="20dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_upload_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload Image"
+                android:textSize="20sp"
+                android:layout_below="@id/et_1"
+                android:layout_marginTop="20dp" />
+
+            <Button
+                android:id="@+id/btn_event_next"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Next"
+                android:textSize="20sp"
+                android:layout_below="@id/btn_upload_image"
+                android:layout_marginTop="20dp" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
+

@@ -77,13 +77,14 @@ class Logging_fourthActivity : AppCompatActivity() {
                 mIvUploadedImage.setImageBitmap(bitmap)
                 mIvUploadedImage.visibility = ImageView.VISIBLE
 
-                val file = File(getRealPathFromURI(filePath))
-                uploadFile(file, { url ->
-                    imageUrl = url
-                    Toast.makeText(this, "Image uploaded successfully", Toast.LENGTH_SHORT).show()
-                }, {
-                    Toast.makeText(this, "Image upload failed", Toast.LENGTH_SHORT).show()
-                })
+                if (filePath != null) {
+                    uploadFile(filePath, { url ->
+                        imageUrl = url
+                        Toast.makeText(this, "Image uploaded successfully", Toast.LENGTH_SHORT).show()
+                    }, {
+                        Toast.makeText(this, "Image upload failed", Toast.LENGTH_SHORT).show()
+                    })
+                }
             } catch (e: Exception) {
                 e.printStackTrace()
             }

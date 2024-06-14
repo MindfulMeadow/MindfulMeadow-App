@@ -98,10 +98,9 @@ class DataBase {
                 }
         }
 
-        fun uploadFile(file : File, successCallBack: (String) -> Unit, failureCallBack: () -> Unit): Unit{
+        fun uploadFile(f : Uri, successCallBack: (String) -> Unit, failureCallBack: () -> Unit): Unit{
             val storage = Firebase.storage
             val storageRef = storage.reference
-            val f = Uri.fromFile(file)
             val imagesRef = storageRef.child("images/${f.lastPathSegment}")
             val uploadTask = imagesRef.putFile(f)
             val urlTask = uploadTask.continueWithTask { task ->

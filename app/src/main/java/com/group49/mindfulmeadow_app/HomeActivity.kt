@@ -73,11 +73,6 @@ class HomeActivity : AppCompatActivity() {
                     finish()
                     true
                 }
-                R.id.ai_analysis -> {
-                    startActivity(Intent(applicationContext, AnalysisActivity::class.java))
-                    finish()
-                    true
-                }
             }
             false
         }

@@ -10,8 +10,5 @@
     <item android:title="Graph"
         android:icon="@drawable/baseline_calendar_month_24_black"
         android:id="@+id/log_graph"/>
-    <item android:title="AI Analysis"
-        android:icon="@drawable/baseline_analytics_24_black"
-        android:id="@+id/ai_analysis"/>
 
 </menu>

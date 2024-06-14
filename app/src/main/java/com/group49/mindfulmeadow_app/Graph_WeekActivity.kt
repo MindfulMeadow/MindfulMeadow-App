@@ -123,11 +123,6 @@ class Graph_WeekActivity : AppCompatActivity() {
                     true
                 }
                 R.id.log_graph -> return@setOnItemSelectedListener true
-                R.id.ai_analysis -> {
-                    startActivity(Intent(applicationContext, AnalysisActivity::class.java))
-                    finish()
-                    true
-                }
             }
             false
         }

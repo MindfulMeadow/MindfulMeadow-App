@@ -56,9 +56,6 @@
             android:name=".Logging_Process.Logging_Snd_Step_Activities.Logging_JoyActivity"
             android:exported="false" />
         <activity
-            android:name=".AnalysisActivity"
-            android:exported="true" />
-        <activity
             android:name=".Graph_WeekActivity"
             android:exported="true" />
         <activity

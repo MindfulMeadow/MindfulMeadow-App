@@ -113,16 +113,17 @@ class DataBase {
                 imagesRef.downloadUrl
             }.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    successCallBack(imagesRef.downloadUrl.toString())
+                    successCallBack("images/${f.lastPathSegment}")
                 } else {
                     failureCallBack()
                 }
             }
         }
 
-        fun downloadFile(url: String, successCallBack: (File) -> Unit, failureCallBack: () -> Unit){
+        fun downloadFile(path: String, successCallBack: (File) -> Unit, failureCallBack: () -> Unit){
             val storage = Firebase.storage
-            val httpsReference = storage.getReferenceFromUrl(url)
+            val storageRef = storage.reference
+            val httpsReference = storageRef.child(path)
             val localFile = File.createTempFile("temp_images", "jpg")
             httpsReference.getFile(localFile).addOnSuccessListener {
                 successCallBack(localFile)

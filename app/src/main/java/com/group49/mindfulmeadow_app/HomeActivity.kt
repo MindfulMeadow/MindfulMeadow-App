@@ -81,7 +81,10 @@ class HomeActivity : AppCompatActivity() {
     private fun showMeaningPopup() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("What does my meadow mean?")
-        builder.setMessage("This meadow is a visual representation of your emotional state: flowers grow when your emotional state is healthy; grass wither when you need to take better care of your emotional state.")
+        builder.setMessage("The meadow in your background is a representation of the frequency and emotions related to your journal entries. \n" +
+                "More frequent entries = greener background;\n" +
+                "Yellow flowers = joy; orange flowers = genius; green flowers = disgust; red flowers = anger; blue flowers = sad; purple flowers = fear.\n" +
+                "Earn our exclusive flower by making an entry for 7 consecutive days!")
         builder.setPositiveButton("OK") { dialog, _ ->
             dialog.dismiss()
         }

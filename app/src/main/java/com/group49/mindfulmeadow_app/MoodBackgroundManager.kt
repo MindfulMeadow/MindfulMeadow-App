@@ -20,10 +20,11 @@ class MoodBackgroundManager(private val context: Context, private val rootLayout
             if (records != null) {
                 val lastSevenDaysRecords = getLastSevenDaysRecords(records)
                 val dailyScores = lastSevenDaysRecords.map { calculateEmotionScore(it.value) }
+                val allSevenDaysHaveRecords = checkAllSevenDaysHaveRecords(lastSevenDaysRecords)
                 val recordCount = lastSevenDaysRecords.values.flatten().size
-                updateBackground(recordCount, dailyScores)
+                updateBackground(recordCount, dailyScores, allSevenDaysHaveRecords)
             } else {
-                updateBackground(0, emptyList())
+                updateBackground(0, emptyList(), false)
             }
         }
     }
@@ -38,6 +39,13 @@ class MoodBackgroundManager(private val context: Context, private val rootLayout
             .groupBy { it.date }
     }
 
+    private fun checkAllSevenDaysHaveRecords(lastSevenDaysRecords: Map<String, List<MoodRecord>>): Boolean {
+        val today = LocalDate.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        val lastSevenDays = (0..6).map { today.minusDays(it.toLong()).format(formatter) }
+
+        return lastSevenDays.all { it in lastSevenDaysRecords.keys }
+    }
 
     public fun calculateEmotionScore(records: List<MoodRecord>): Float {
         if (records.isEmpty()) return 0f
@@ -112,8 +120,7 @@ class MoodBackgroundManager(private val context: Context, private val rootLayout
         return totalScore / records.size
     }
 
-
-    private fun updateBackground(recordCount: Int, dailyScores: List<Float>) {
+    private fun updateBackground(recordCount: Int, dailyScores: List<Float>, allSevenDaysHaveRecords: Boolean) {
         val baseBackground = when {
             recordCount < 1  -> R.drawable.grass_1
             recordCount < 3 -> R.drawable.grass_2
@@ -142,6 +149,10 @@ class MoodBackgroundManager(private val context: Context, private val rootLayout
                     addedLayers.add(drawableRes)
                 }
             }
+        }
+
+        if (allSevenDaysHaveRecords) {
+            layers.add(ContextCompat.getDrawable(context, R.drawable.flower_exclusive))
         }
 
         layers.add(ContextCompat.getDrawable(context, R.drawable.white_filter))

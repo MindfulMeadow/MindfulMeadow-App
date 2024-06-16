@@ -30,9 +30,6 @@ import java.time.format.DateTimeFormatter
 
 class Graph_WeekActivity : AppCompatActivity() {
 
-    private lateinit var tvYear: TextView
-    private lateinit var tvMonth: TextView
-    private lateinit var tvWeek: TextView
     private lateinit var barChart: BarChart
     private lateinit var tv_analysis: TextView
     private lateinit var btn_analysis: Button
@@ -44,10 +41,6 @@ class Graph_WeekActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graph_week)
 
-        // Initialize TextViews for the time span selector
-        tvYear = findViewById(R.id.tv_year)
-        tvMonth = findViewById(R.id.tv_month)
-        tvWeek = findViewById(R.id.tv_week)
         graphWeekLayout = findViewById(R.id.week_layout)
 
         // Use for AI analysis: 你要用的时候就把comment去掉 To 木鱼
@@ -61,25 +54,6 @@ class Graph_WeekActivity : AppCompatActivity() {
         val userId = username
 
         moodBackgroundManager.updateBackgroundBasedOnMoodRecords(userId)
-
-        //Jump to corresponding page
-        tvWeek.setOnClickListener {
-            val intent = Intent(this@Graph_WeekActivity, Graph_WeekActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
-        }
-
-        tvMonth.setOnClickListener {
-            val intent = Intent(this@Graph_WeekActivity, Graph_MonthActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
-        }
-
-        tvYear.setOnClickListener {
-            val intent = Intent(this@Graph_WeekActivity, Graph_YearActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.enter_anim, R.anim.exit_anim )
-        }
 
 
         // Initialize ImageViews

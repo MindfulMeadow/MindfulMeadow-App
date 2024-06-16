@@ -16,56 +16,12 @@
         android:textSize="30sp"
         android:gravity="center" />
 
-    <!-- Time Span Selector Bar -->
-    <LinearLayout
-        android:id="@+id/timeSpanSelector"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="16dp"
-        android:layout_below="@+id/tv_1"
-        android:layout_marginTop="20dp">
-
-        <TextView
-            android:id="@+id/tv_year"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="Y"
-            android:textColor="@android:color/white"
-            android:background="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/tv_month"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="M"
-            android:textColor="@android:color/white"
-            android:background="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/tv_week"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="8dp"
-            android:text="W"
-            android:textColor="@android:color/black"
-            android:background="@android:color/holo_green_light" />
-    </LinearLayout>
 
     <!-- ScrollView to enable scrolling for content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/timeSpanSelector"
+        android:layout_below="@id/tv_1"
         android:layout_above="@id/bottomNavigationView">
 
         <LinearLayout

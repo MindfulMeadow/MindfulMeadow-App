@@ -23,12 +23,6 @@
             android:name=".MoodRecordDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".Graph_YearActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Graph_MonthActivity"
-            android:exported="false" />
-        <activity
             android:name=".Logging_Process.Logging_fifthActivity"
             android:exported="false" />
         <activity

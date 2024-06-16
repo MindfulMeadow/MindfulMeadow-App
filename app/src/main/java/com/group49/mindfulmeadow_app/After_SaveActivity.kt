@@ -59,7 +59,8 @@ class After_SaveActivity : AppCompatActivity() {
                 "Genius" -> "Keep shining!"
                 "Joy" -> "Well done!"
                 "Disgust" -> "It's okay to feel discomfort; it's a sign of your values and standards."
-                "Anger" -> "Anger highlights your values and standards, but it can also make you someone else. Remember to take deep breaths and let calm guide your actions. How about some sweet treats? Sweet food stimulates the release of dopamine... anyway, what's wrong with treating yourself with sweets?"
+                "Anger" -> "Anger highlights your values and standards, but it can also cloud your judgements. Remember to take deep breaths and let calm guide your actions.\n" +
+                        "How about some sweet treats? Sweet food stimulates the release of dopamine... anyway, what's wrong with treating yourself with sweets?"
                 "Sad" -> "It's okay to feel sad, just remember that brighter days are ahead. How about some spicy food? Spicy food stimulates the release of endorphins, alleviating your sadness."
                 "Fear" -> "Fear can be overwhelming, but it also signals courage. Face it step by step, and you'll find the strength to overcome it. Perhaps something sour? Sour food stimulates your nerves, alleviating stress."
                 else -> "No specific advice available."
